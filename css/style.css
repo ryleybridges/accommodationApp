@@ -1,8 +1,15 @@
 body {
-  background-color: black;
+  background-image: url('.../images/lake-matheson-in-new-zealand.jpg');
+  background-repeat: no-repeat;
+}
+
+h1 {
+  font-family: ;
 }
 
 .container {
   background-color: white;
-  margin-top: 500px;
+  display: flex;
+  justify-content: center;
+  height: 400px;
 }
