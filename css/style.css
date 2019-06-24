@@ -1,5 +1,6 @@
 body {
-  background-image: url('images/lake-matheson-in-new-zealand.jpg');
+  background-image: url('background.jpg');
+  background-repeat: no-repeat;
   background-color: black;
 }
 
@@ -17,4 +18,8 @@ body {
   font-weight: 600;
   height: 40%;
   width: 30%;
+}
+
+input {
+  width: 50%;
 }
