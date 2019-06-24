@@ -33,7 +33,7 @@ accommodationOptions = [
     lat: -41.293066,
     lng: 174.783989,
     description: 'Located in the very center of Wellington, this award-winning hostel features 2 fully equipped kitchens and dining areas and a spacious guest lounge room with TV projection screen and free movie hire. 2GB of free WiFi is available each day for all guests.',
-    image: ''
+    image: 'yha-wellington-exterior-2-2010-1500.jpg'
   },
   {
     id: 5,
@@ -48,9 +48,63 @@ accommodationOptions = [
     id: 6,
     title: 'The Marion Hostel',
     type: 'Hostel',
-    lat: ,
-    lng: ,
-    description: '',
-    image: ''
+    lat: -41.294208,
+    lng: 174.776705,
+    description: 'Located in the heart of the city of Wellington,The Marion Hostel offers a range of backpacker accommodations and features a rooftop terrace. It is just a 1-minute walk from Cuba Street where you will find a variety of restaurants, cafes and bars. Free high speed unlimited WiFi is offered throughout the property.',
+    image: 'marionhotel.jpg'
+  },
+  {
+    id: 7,
+    title: 'The Wellington Container House',
+    type: 'House',
+    lat: -41.334940,
+    lng: 174.757320,
+    description: 'This magical and unique holiday home is constructed using 3 vertically stacked shipping containers interlinked by spacious outdoor areas and a spiral staircase. Facilities include a hydrotherapy spa, free fast wifi internet, private cinema room with projector screen, full cooking facilities, designer furniture throughout, a macrocarpa bathhouse and secure parking. The outdoor areas are perfect for entertaining, with a full BBQ, an outdoor shower (for the brave) and your own private waterfall!',
+    image: 'containerhouse.jpg'
+  },
+  {
+    id: 8,
+    title: 'The Penthouse on Evans Bay',
+    type: 'House',
+    lat: -41.304027,
+    lng: 174.802489,
+    description: 'This is a beautiful and sunny waterfront 3-bed penthouse apartment with an enormous balcony/deck, expansive water views overlooking Wellington Harbour and situated equidistant between Wellington City and Wellington Airport.',
+    image: 'penthouse.jpg'
+  },
+  {
+    id: 9,
+    title: 'Wellington City Cottages',
+    type: 'House',
+    lat: -41.296782,
+    lng: 174.773548,
+    description: 'Just 1.2 mi from Oriental Bay, Wellington City Cottages offer self-contained accommodations with a private patio. The property features free WiFi and a lovely garden. Free parking is available on site. City Cottages Wellington are 15 minutes’ walk from the famous Te Papa Museum. Westpac Stadium, the Interislander Ferry Terminal and Wellington International Airport are all just a 10-minute drive away.',
+    image: 'citycottage.jpg'
+  },
+  {
+    id: 10,
+    title: 'Bella Vista Motel',
+    type: 'Motel',
+    lat: -41.301914,
+    lng: 174.804165,
+    description: 'Located within a 10-minute drive from Wellington CBD where you will find shopping, entertainment and other activities, Bella Vista Motel Wellington offers 4-star accommodations with free private parking. Wellington Airport is just a 9-minute drive from the property.',
+    image: 'bellavista.jpg'
+  },
+  {
+    id: 11,
+    title: 'Marksman Motor Inn',
+    type: 'Motel',
+    lat: -41.300372,
+    lng: 174.778582,
+    description: 'The Marksman is conveniently located in central Wellington within walking distance of local attractions, the CBD, Courtenay Place entertainment district, and close to the Interisland Ferry Terminal and Wellington City Airport.',
+    image: 'marksman.jpg'
+  },
+  {
+    id: 12,
+    title: 'Airport Motor Lodge',
+    type: 'Motel',
+    lat: -41.325270,
+    lng: 174.811649,
+    description: 'Located 5 minutes walk or 2 minutes drive from Wellington Airport, Airport Motor Lodge offers fully soundproofed motel. Free onsite parking and a complimentary airport shuttle service are provided.',
+    image: 'airportmotorlodge.jpg'
   }
 ]
