@@ -110,24 +110,26 @@ accommodationOptions = [
 ]
 
 function startingPage(){
-  var startHTML = document.getElementById('startingPage');
-  startHTML.innerHTML =+ ('<div class="row">');
-  startHTML.innerHTML =+ ('<div class="col">');
-  startHTML.innerHTML =+ ('<h1 class="mt-5 text-center">BookIt Accommodation</h1>');
-  startHTML.innerHTML =+ ('</div>');
-  startHTML.innerHTML =+ ('</div>');
-  startHTML.innerHTML =+ ('<div class="row">');
-  startHTML.innerHTML =+ ('<div class="col">');
-  startHTML.innerHTML =+ ('</div>');
-  startHTML.innerHTML =+ ('<div class="col">');
-  startHTML.innerHTML =+ ('<button type="button" class="btn btn-dark btn-lg">BEGIN</button>')
-  startHTML.innerHTML =+ ('</div>');
-  startHTML.innerHTML =+ ('</div>');
+  var startHTML = document.getElementById('mainPageContainer');
+  startHTML.innerHTML += ('<div class="row">');
+  startHTML.innerHTML += ('<div class="col">');
+  startHTML.innerHTML += ('<h1 class="mt-5 text-center">BookIt Accommodation</h1>');
+  startHTML.innerHTML += ('</div>');
+  startHTML.innerHTML += ('</div>');
+  startHTML.innerHTML += ('<div class="row">');
+  startHTML.innerHTML += ('<div class="col">');
+  startHTML.innerHTML += ('</div>');
+  startHTML.innerHTML += ('<div class="col">');
+  startHTML.innerHTML += ('<button type="button" class="btn btn-dark btn-lg" onclick="formPage();">BEGIN</button>')
+  startHTML.innerHTML += ('</div>');
+  startHTML.innerHTML += ('</div>');
 }
 
 startingPage();
 
 function formPage(){
-  startingPage().hide();
-  console.log("starting page hiding - form page shows");
+  $('#mainPageContainer').html("");
+  console.log('starting page hiding - form page shows');
+  var formHTML = document.getElementById('mainPageContainer');
+  formHTML.innerHTML +=
 }
