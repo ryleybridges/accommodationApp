@@ -6,7 +6,7 @@ body {
 
 .container {
   background-color: white;
-  height: 500px;
+  height: 550px;
 }
 
 .btn {
@@ -18,9 +18,4 @@ body {
   font-weight: 600;
   height: 40%;
   width: 30%;
-}
-
-input {
-  opacity: 1;
-  background-color: white;
 }

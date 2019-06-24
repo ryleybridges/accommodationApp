@@ -116,7 +116,7 @@ function startingPage(){
   startHTML.innerHTML += ('</div>');
   startHTML.innerHTML += ('<div class="row">');
   startHTML.innerHTML += ('<div class="col">');
-  startHTML.innerHTML += ('<h1 class="mt-1 text-center">BookIt Accommodation</h1>');
+  startHTML.innerHTML += ('<h1 class="mt-3 text-center">BookIt Accommodation</h1>');
   startHTML.innerHTML += ('</div>');
   startHTML.innerHTML += ('</div>');
   startHTML.innerHTML += ('<div class="row">');
