@@ -112,15 +112,18 @@ accommodationOptions = [
 function startingPage(){
   var startHTML = document.getElementById('mainPageContainer');
   startHTML.innerHTML += ('<div class="row">');
+  startHTML.innerHTML += ('<div class="col d-flex justify-content-center"><img src="images/tourismlogo.png" alt="Tourism New Zealand logo"></div>')
+  startHTML.innerHTML += ('</div>');
+  startHTML.innerHTML += ('<div class="row">');
   startHTML.innerHTML += ('<div class="col">');
-  startHTML.innerHTML += ('<h1 class="mt-5 text-center">BookIt Accommodation</h1>');
+  startHTML.innerHTML += ('<h1 class="mt-1 text-center">BookIt Accommodation</h1>');
   startHTML.innerHTML += ('</div>');
   startHTML.innerHTML += ('</div>');
   startHTML.innerHTML += ('<div class="row">');
   startHTML.innerHTML += ('<div class="col">');
   startHTML.innerHTML += ('</div>');
   startHTML.innerHTML += ('<div class="col">');
-  startHTML.innerHTML += ('<button type="button" class="btn btn-dark btn-lg" onclick="formPage();">BEGIN</button>')
+  startHTML.innerHTML += ('<button type="button" class="mt-3 btn btn-dark btn-lg d-flex justify-content-center btn-begin" onclick="formPage();">BEGIN</button>')
   startHTML.innerHTML += ('</div>');
   startHTML.innerHTML += ('</div>');
 }
