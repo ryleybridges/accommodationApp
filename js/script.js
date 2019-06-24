@@ -128,8 +128,35 @@ function startingPage(){
 startingPage();
 
 function formPage(){
-  $('#mainPageContainer').html("");
-  console.log('starting page hiding - form page shows');
+  $('#mainPageContainer').html('');
   var formHTML = document.getElementById('mainPageContainer');
-  formHTML.innerHTML +=
+  formHTML.innerHTML += ('<div class="row">');
+  formHTML.innerHTML += ('<div class="col">');
+  formHTML.innerHTML += ('<h4 class="text-center mt-5">Where are you headed?</h4> <!-- Use autocomplete from Google API -->')
+  formHTML.innerHTML += ('<input type="text" class="form-control">');
+  formHTML.innerHTML += ('</div>');
+  formHTML.innerHTML += ('<div class="col">');
+  formHTML.innerHTML += ('<h4 class="text-center mt-5">When are you heading there?</h4> <!-- Use datepicker from JQuery UI -->');
+  formHTML.innerHTML += ('<input type="text" class="form-control">');
+  formHTML.innerHTML += ('</div>');
+  formHTML.innerHTML += ('</div>');
+  formHTML.innerHTML += ('<div class="row">');
+  formHTML.innerHTML += ('<div class="col">');
+  formHTML.innerHTML += ('<h4 class="text-center mt-5">How many people?</h4>');
+  formHTML.innerHTML += ('<input type="text" class="form-control">');
+  formHTML.innerHTML += ('</div>');
+  formHTML.innerHTML += ('<div class="col">');
+  formHTML.innerHTML += ('<h4 class="text-center mt-5">How many nights?</h4>');
+  formHTML.innerHTML += ('<input type="text" class="form-control">');
+  formHTML.innerHTML += ('</div>');
+  formHTML.innerHTML += ('</div>');
+  formHTML.innerHTML += ('<div class="row">');
+  formHTML.innerHTML += ('<div class="col">');
+  formHTML.innerHTML += ('<button type="button" class="btn btn-dark btn-lg mt-5 d-flex justify-content-center" onclick="resultsPage();">Find Accommodation</button>');
+  formHTML.innerHTML += ('</div>');
+  formHTML.innerHTML += ('</div>');
+}
+
+function resultsPage(){
+  $('#mainPageContainer').html('');
 }
