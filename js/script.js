@@ -160,6 +160,6 @@ function formPage(){
   formHTML.innerHTML += ('</div>');
 }
 
-function resultsPage(){
-  $('#mainPageContainer').html('');
-}
+// function resultsPage(){
+//   $('#mainPageContainer').html('');
+// }
