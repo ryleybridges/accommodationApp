@@ -108,3 +108,7 @@ accommodationOptions = [
     image: 'airportmotorlodge.jpg'
   }
 ]
+
+function startingPage(){
+  document.getElementById('startingPage').innerHTML('<div class="row">')
+}
