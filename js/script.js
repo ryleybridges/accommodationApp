@@ -158,6 +158,6 @@ function initMap(){
       };
     }
 
-    google.maps.event.addDomListener(window, 'load', initialize);
+    autocomplete = new google.maps.places.Autocomplete(input, options);
 
 }
