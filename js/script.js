@@ -148,16 +148,16 @@ $( function() {
 //   $('#mainPageContainer').html('');
 // }
 
-var map;
-function initMap(){
-  function initialize() {
-    var input = document.getElementById('searchTextField');
-    var options = {
-        types: ['(cities)'],
-        componentRestrictions: {country: 'nz'}
-      };
-    }
-
-    autocomplete = new google.maps.places.Autocomplete(input, options);
-
-}
+// var map;
+// function initMap(){
+//   function initialize() {
+//     var input = document.getElementById('searchTextField');
+//     var options = {
+//         types: ['(cities)'],
+//         componentRestrictions: {country: 'nz'}
+//       };
+//     }
+//
+//     autocomplete = new google.maps.places.Autocomplete(input, options);
+//
+// }
