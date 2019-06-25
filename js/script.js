@@ -133,11 +133,11 @@ function startingPage(){
 function formPage(){
   $('#mainPageContainer').html('');
   var formHTML = document.getElementById('mainPageContainer');
-  formHTML.innerHTML += ('<form class="needs-validation" novalidate><div class="row"> <div class="col"><h4 class="text-center mt-5">Where are you headed?</h4><input type="text" id="destination" class="form-control"></div> <div class="col"><h4 class="text-center mt-5">When are you heading there?<input type="text" class="form-control" id="datepicker"></div> </div></form>');
+  formHTML.innerHTML += ('<div class="row"> <div class="col"><h4 class="text-center mt-5">Where are you headed?</h4><input type="text" id="destination" class="form-control"></div> <div class="col"><h4 class="text-center mt-5">When are you heading there?<input type="text" class="form-control" id="datepicker"></div> </div>');
   formHTML.innerHTML += ('<div class="row"><div class="col"><h4 class="text-center mt-5">How many people?</h4><input type="text" class="form-control" id="people"></div><div class="col"><h4 class="text-center mt-5">How many nights?</h4><input type="text" class="form-control" id="nights"></div></div>');
   formHTML.innerHTML += ('<div class="row"><div class="col"><button type="button" id="next" class="btn btn-dark btn-lg mt-5 d-flex justify-content-center" onclick="resultsPage();">Next</button></div></div>');
 
-  $("#next").click(function (){
+  $("#next").click(function(){
     var userDestination = document.getElementById('destination').value;
     console.log(userDestination);
     var userDate = document.getElementById('datepicker').value;
@@ -150,7 +150,6 @@ function formPage(){
 
 
 }
-
 formPage();
 
 $( function() {
@@ -161,16 +160,7 @@ function resultsPage(){
 
 }
 
-// var map;
-// function initMap(){
-//   function initialize() {
-//     var input = document.getElementById('searchTextField');
-//     var options = {
-//         types: ['(cities)'],
-//         componentRestrictions: {country: 'nz'}
-//       };
-//     }
-//
-//     autocomplete = new google.maps.places.Autocomplete(input, options);
-//
-// }
+var map;
+function initMap(){
+
+}
