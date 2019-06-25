@@ -146,19 +146,6 @@ function formPage(){
     console.log(userPeople);
     var userNights = parseInt(document.getElementById('nights').value);
     console.log(userNights);
-
-    // if(userDestination === ""){
-    //   console.log("Please enter a valid destination");
-    // }
-    // if(userDate === ""){
-    //   console.log("Please enter a valid date");
-    // }
-    // if(userPeople === ""){
-    //   console.log("Please enter a number of people");
-    // }
-    // if(userNights === ""){
-    //   console.log("Please enter a number of nights");
-    // }
   });
 
 
