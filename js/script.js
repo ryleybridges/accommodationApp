@@ -205,8 +205,6 @@ $( function() {
 
 // function resultsPage(){
 //   $('#mainPageContainer').html('');
-//   var resultHTML = document.getElementById('mainPageContainer');
-//   resultHTML.innerHTML += ('<div class="row"><div class="col"><div id="map" class="mt-5"></div></div></div>');
 // }
 
 var map;
