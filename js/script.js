@@ -140,7 +140,7 @@ function formPage(){
 
 $( function() {
     $( "#datepicker" ).datepicker();
-  } );
+} );
 
 // function resultsPage(){
 //   $('#mainPageContainer').html('');
