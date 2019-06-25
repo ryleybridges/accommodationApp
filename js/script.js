@@ -133,9 +133,24 @@ function startingPage(){
 function formPage(){
   $('#mainPageContainer').html('');
   var formHTML = document.getElementById('mainPageContainer');
-  formHTML.innerHTML += ('<div class="row"><div class="col"><h4 class="text-center mt-5 controls" id="searchTextField">Where are you headed?</h4> <!-- Use autocomplete from Google API --><input type="text" class="form-control"></div><div class="col"><h4 class="text-center mt-5">When are you heading there?<input type="text" class="form-control" id="datepicker"></div></div>');
-  formHTML.innerHTML += ('<div class="row"><div class="col"><h4 class="text-center mt-5">How many people?</h4><input type="text" class="form-control"></div><div class="col"><h4 class="text-center mt-5">How many nights?</h4><input type="text" class="form-control"></div></div>');
-  formHTML.innerHTML += ('<div class="row"><div class="col"><button type="button" class="btn btn-dark btn-lg mt-5 d-flex justify-content-center" onclick="resultsPage();">Next</button></div></div>');
+  formHTML.innerHTML += ('<div class="row"> <div class="col"><h4 class="text-center mt-5">Where are you headed?</h4><input type="text" id="destination" class="form-control" placeholder="Wellington"></div> <div class="col"><h4 class="text-center mt-5">When are you heading there?<input type="text" class="form-control" id="datepicker"><div class="invalid-feedback">Please provide a valid date.</div></div> </div>');
+  formHTML.innerHTML += ('<div class="row"><div class="col"><h4 class="text-center mt-5">How many people?</h4><input type="text" class="form-control" id="people"></div><div class="col"><h4 class="text-center mt-5">How many nights?</h4><input type="text" class="form-control" id="nights"></div></div>');
+  formHTML.innerHTML += ('<div class="row"><div class="col"><button type="button" id="next" class="btn btn-dark btn-lg mt-5 d-flex justify-content-center" onclick="resultsPage();">Next</button></div></div>');
+
+  $("#next").click(function (){
+    var userDestination = document.getElementById('destination').value;
+    console.log(userDestination);
+    var userDate = document.getElementById('datepicker').value;
+    console.log(userDate);
+    var userPeople = parseInt(document.getElementById('people').value);
+    console.log(userPeople);
+    var userNights = parseInt(document.getElementById('nights').value);
+    console.log(userNights);
+
+    // if(userDestination === "")
+  });
+
+
 }
 
 formPage();
@@ -144,9 +159,9 @@ $( function() {
     $( "#datepicker" ).datepicker();
 } );
 
-// function resultsPage(){
-//   $('#mainPageContainer').html('');
-// }
+function resultsPage(){
+
+}
 
 // var map;
 // function initMap(){
