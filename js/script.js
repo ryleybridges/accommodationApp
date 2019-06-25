@@ -128,7 +128,7 @@ function startingPage(){
   startHTML.innerHTML += ('</div>');
 }
 
-startingPage();
+// startingPage();
 
 function formPage(){
   $('#mainPageContainer').html('');
@@ -137,6 +137,8 @@ function formPage(){
   formHTML.innerHTML += ('<div class="row"><div class="col"><h4 class="text-center mt-5">How many people?</h4><input type="text" class="form-control"></div><div class="col"><h4 class="text-center mt-5">How many nights?</h4><input type="text" class="form-control"></div></div>');
   formHTML.innerHTML += ('<div class="row"><div class="col"><button type="button" class="btn btn-dark btn-lg mt-5 d-flex justify-content-center" onclick="resultsPage();">Next</button></div></div>');
 }
+
+formPage();
 
 $( function() {
     $( "#datepicker" ).datepicker();
@@ -150,10 +152,10 @@ var map;
 function initMap(){
   function initialize() {
     var input = document.getElementById('searchTextField');
-    new google.maps.places.Autocomplete(input);
-    google.maps.event.addListener(autocomplete, 'place_changed', function(){
-          var place = autocomplete.getPlace();
-      });
+    var options = {
+        types: ['(cities)'],
+        componentRestrictions: {country: 'nz'}
+      };
     }
 
     google.maps.event.addDomListener(window, 'load', initialize);
