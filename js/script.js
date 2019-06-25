@@ -135,7 +135,7 @@ function formPage(){
   var formHTML = document.getElementById('mainPageContainer');
   formHTML.innerHTML += ('<div class="row"> <div class="col"><h4 class="text-center mt-5">Where are you headed?</h4><input type="text" id="destination" class="form-control"></div> <div class="col"><h4 class="text-center mt-5">When are you heading there?<input type="text" class="form-control" id="datepicker"></div> </div>');
   formHTML.innerHTML += ('<div class="row"><div class="col"><h4 class="text-center mt-5">How many people?</h4><input type="text" class="form-control" id="people"></div><div class="col"><h4 class="text-center mt-5">How many nights?</h4><input type="text" class="form-control" id="nights"></div></div>');
-  formHTML.innerHTML += ('<div class="row"><div class="col"><button type="button" id="next" class="btn btn-dark btn-lg mt-5 d-flex justify-content-center"">Next</button></div></div>');
+  formHTML.innerHTML += ('<div class="row"><div class="col"><button type="button" id="next" class="btn btn-dark btn-lg mt-5 d-flex justify-content-center">Next</button></div></div>');
 
   $("#next").click(function(){
     var userDestination = document.getElementById('destination').value;
