@@ -20,6 +20,13 @@ body {
   width: 30%;
 }
 
+.btn-form {
+  font-size: 30px;
+  font-weight: 600;
+  height: 40%;
+  width: 30%;
+}
+
 input {
-  width: 50%;
+  width: 10px;
 }
