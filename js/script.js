@@ -146,12 +146,16 @@ $( function() {
 //   $('#mainPageContainer').html('');
 // }
 
-function initialize() {
-  var input = document.getElementById('searchTextField');
-  new google.maps.places.Autocomplete(input);
-  google.maps.event.addListener(autocomplete, 'place_changed', function(){
-         var place = autocomplete.getPlace();
-      })
-}
+var map;
+function initMap(){
+  function initialize() {
+    var input = document.getElementById('searchTextField');
+    new google.maps.places.Autocomplete(input);
+    google.maps.event.addListener(autocomplete, 'place_changed', function(){
+          var place = autocomplete.getPlace();
+      });
+    }
 
-google.maps.event.addDomListener(window, 'load', initialize);
+    google.maps.event.addDomListener(window, 'load', initialize);
+
+}
