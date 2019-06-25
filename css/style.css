@@ -36,3 +36,9 @@ input {
 .mt-6 {
   margin-top: 6rem !important;
 }
+
+#map{
+  height: 910%;
+  width: 30%;
+  background-color: red;
+}
