@@ -135,9 +135,9 @@ accommodationOptions = [
     id: 12,
     title: 'Airport Motor Lodge',
     type: 'Motel',
-    cost: 90,
-    minNight: 3,
-    maxNight: 10,
+    // cost: 90,
+    // minNight: 3,
+    // maxNight: 10,
     lat: -41.325270,
     lng: 174.811649,
     description: 'Located 5 minutes walk or 2 minutes drive from Wellington Airport, Airport Motor Lodge offers fully soundproofed motel. Free onsite parking and a complimentary airport shuttle service are provided.',
@@ -181,10 +181,18 @@ function formPage(){
     var userPeople = parseInt(document.getElementById('people').value);
     console.log(userPeople);
     var userNights = parseInt(document.getElementById('nights').value);
-    // console.log("Hotel costs $" + userNights * 157);
-    // console.log("Hostel costs $" + userNights * 30);
-    // console.log("Motel costs $" + userNights * 90);
-    // console.log("House costs $" + userNights * 240);
+    console.log(userNights);
+
+    if(userDestination === ""){
+        Swal.fire({
+        title: 'Invalid!',
+        text: 'You did not enter all required information. Please go again.',
+        type: 'error',
+        confirmButtonText: 'Ok'
+      });
+    }
+
+
   });
 
 }
