@@ -186,10 +186,23 @@ function formPage(){
     if(userDestination === ""){
         Swal.fire({
         title: 'Invalid!',
-        text: 'You did not enter all required information. Please go again.',
+        text: 'You did not enter all of the required information. Please enter it before proceeding.',
         type: 'error',
         confirmButtonText: 'Ok'
       });
+    }if else(userNights === ""){
+        Swal.fire({
+        title: 'Invalid!',
+        text: 'You did not enter all of the required information. Please enter it before proceeding.',
+        type: 'error',
+        confirmButtonText: 'Ok'
+      });
+    }if else(userDate === ""){
+
+    }if else(userNights === ""){
+
+    }else {
+      resultsPage();
     }
 
 
@@ -203,9 +216,9 @@ $( function() {
     $( '#datepicker' ).datepicker();
 } );
 
-// function resultsPage(){
-//   $('#mainPageContainer').html('');
-// }
+function resultsPage(){
+  $('#mainPageContainer').html('');
+}
 
 var map;
 function initMap(){
