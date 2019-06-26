@@ -3,7 +3,7 @@ accommodationOptions = [
     id: 1,
     title: 'Novotel Wellington',
     type: 'Hotel',
-    // cost: 157,
+    cost: 157,
     // minNight: 1,
     // maxNight: 5,
     lat: -41.283823,
@@ -15,19 +15,19 @@ accommodationOptions = [
     id: 2,
     title: 'InterContinetal Wellington',
     type: 'Hotel',
-    // cost: 157,
+    cost: 157,
     // minNight: 1,
     // maxNight: 5,
     lat: -41.284636,
     lng: 174.776942,
     description: 'The 5-star InterContinental Wellington is located by the harbor waterfront, just 5 mi from Wellington International Airport. It offers an exclusive club lounge, a fitness center, 2 restaurants and a bar. The elegant guest rooms are spacious and well-furnished. All rooms feature a TV with cable channels and a large bathroom with modern amenities and bathrobes. Some rooms include access to the club lounge.',
-    image: 'intercontinetal-wellington.jpg'
+    image: 'intercontinental-wellington.jpg'
   },
   {
     id: 3,
     title: 'Boulcott Suites',
     type: 'Hotel',
-    // cost: 157,
+    cost: 157,
     // minNight: 1,
     // maxNight: 5,
     lat: -41.289109,
@@ -39,7 +39,7 @@ accommodationOptions = [
     id: 4,
     title: 'YHA Wellington Backpacker Hostel',
     type: 'Hostel',
-    // cost: 30,
+    cost: 30,
     // minNight: 1,
     // maxNight: 10,
     lat: -41.293066,
@@ -51,7 +51,7 @@ accommodationOptions = [
     id: 5,
     title: 'Nomads Capital Hostel Wellington',
     type: 'Hostel',
-    // cost: 30,
+    cost: 30,
     // minNight: 1,
     // maxNight: 10,
     lat: -41.289576,
@@ -63,7 +63,7 @@ accommodationOptions = [
     id: 6,
     title: 'The Marion Hostel',
     type: 'Hostel',
-    // cost: 30,
+    cost: 30,
     // minNight: 1,
     // maxNight: 10,
     lat: -41.294208,
@@ -75,7 +75,7 @@ accommodationOptions = [
     id: 7,
     title: 'The Wellington Container House',
     type: 'House',
-    // cost: 240,
+    cost: 240,
     // minNight: 2,
     // maxNight: 15,
     lat: -41.334940,
@@ -87,7 +87,7 @@ accommodationOptions = [
     id: 8,
     title: 'The Penthouse on Evans Bay',
     type: 'House',
-    // cost: 240,
+    cost: 240,
     // minNight: 2,
     // maxNight: 15,
     lat: -41.304027,
@@ -99,7 +99,7 @@ accommodationOptions = [
     id: 9,
     title: 'Wellington City Cottages',
     type: 'House',
-    // cost: 240,
+    cost: 240,
     // minNight: 2,
     // maxNight: 15,
     lat: -41.296782,
@@ -111,7 +111,7 @@ accommodationOptions = [
     id: 10,
     title: 'Bella Vista Motel',
     type: 'Motel',
-    // cost: 90,
+    cost: 90,
     // minNight: 3,
     // maxNight: 10,
     lat: -41.301914,
@@ -123,7 +123,7 @@ accommodationOptions = [
     id: 11,
     title: 'Marksman Motor Inn',
     type: 'Motel',
-    // cost: 90,
+    cost: 90,
     // minNight: 3,
     // maxNight: 10,
     lat: -41.300372,
@@ -135,7 +135,7 @@ accommodationOptions = [
     id: 12,
     title: 'Airport Motor Lodge',
     type: 'Motel',
-    // cost: 90,
+    cost: 90,
     // minNight: 3,
     // maxNight: 10,
     lat: -41.325270,
@@ -226,8 +226,9 @@ function resultsPage(){
   $('#mainPageContainer').html('');
   var resultsHTML = document.getElementById('mainPageContainer');
   for (var i = 0; i < accommodationOptions.length; i++) {
+    resultsHTML.innerHTML += '<div class="card h-100 col-12 col-sm-6 col-md-3 mb-3" style="width: 12rem; height: 8rem;"><img src="images/cards/' + accommodationOptions[i].image + '" class="card-img-top" alt="..."><div class="card-body"><h6 class="card-text text-center">' + accommodationOptions[i].title + '</h6><p class="card-text text-center">$' + accommodationOptions[i].cost + '/night</p></div></div>';
   }
-  resultsHTML.innerHTML += '<div class="card" style="width: 18rem;"><img src="' + accommodationOptions[i].image + '" class="card-img-top" alt="..."><div class="card-body"><p class="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p></div></div>';
+
 }
 
 var map;
