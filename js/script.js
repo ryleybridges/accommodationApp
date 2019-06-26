@@ -183,29 +183,38 @@ function formPage(){
     var userNights = parseInt(document.getElementById('nights').value);
     console.log(userNights);
 
-    if(userDestination === ""){
+    if(userDestination === ''){
         Swal.fire({
+          title: 'Invalid!',
+          text: 'You did not enter all of the required information correctly. Please enter it before proceeding.',
+          type: 'error',
+          confirmButtonText: 'Ok'
+        });
+
+    }else if(userDate === ''){
+      Swal.fire({
         title: 'Invalid!',
-        text: 'You did not enter all of the required information. Please enter it before proceeding.',
+        text: 'You did not enter all of the required information correctly. Please enter it before proceeding.',
         type: 'error',
         confirmButtonText: 'Ok'
       });
-    }if else(userNights === ""){
-        Swal.fire({
+    }else if(isNaN(userPeople === '')){
+      Swal.fire({
         title: 'Invalid!',
-        text: 'You did not enter all of the required information. Please enter it before proceeding.',
+        text: 'You did not enter all of the required information correctly. Please enter it before proceeding.',
         type: 'error',
         confirmButtonText: 'Ok'
       });
-    }if else(userDate === ""){
-
-    }if else(userNights === ""){
-
+    }else if(isNaN(userNights === '')){
+      Swal.fire({
+        title: 'Invalid!',
+        text: 'You did not enter all of the required information correctly. Please enter it before proceeding.',
+        type: 'error',
+        confirmButtonText: 'Ok'
+      });
     }else {
       resultsPage();
     }
-
-
   });
 
 }
