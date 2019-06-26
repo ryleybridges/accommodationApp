@@ -175,13 +175,9 @@ function formPage(){
 
   $("#next").click(function(){
     var userDestination = document.getElementById('destination').value;
-    console.log(userDestination);
     var userDate = document.getElementById('datepicker').value;
-    console.log(userDate);
     var userPeople = document.getElementById('people').value;
-    console.log(userPeople);
     var userNights = document.getElementById('nights').value;
-    console.log(userNights);
 
     if(userDestination === ''){
         Swal.fire({
