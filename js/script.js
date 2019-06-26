@@ -170,7 +170,7 @@ function formPage(){
   $('#mainPageContainer').html('');
   var formHTML = document.getElementById('mainPageContainer');
   formHTML.innerHTML += ('<div class="row"> <div class="col"><h4 class="text-center mt-6">Where are you going?</h4><input type="text" id="destination" class="form-control"></div> <div class="col"><h4 class="text-center mt-6">When are you going there?<input type="text" class="form-control" id="datepicker"></div> </div>');
-  formHTML.innerHTML += ('<div class="row"><div class="col"><h4 class="text-center mt-5">How many people are going?</h4><input type="text" class="form-control" id="people"></div><div class="col"><h4 class="text-center mt-5">How many nights?</h4><input type="text" class="form-control" id="nights"></div></div>');
+  formHTML.innerHTML += ('<div class="row"><div class="col"><h4 class="text-center mt-5">How many people are going?</h4><input type="number" class="form-control" id="people"></div><div class="col"><h4 class="text-center mt-5">How many nights?</h4><input type="number" class="form-control" id="nights"></div></div>');
   formHTML.innerHTML += ('<div class="row"><div class="col"><button type="button" id="next" class="btn btn-dark btn-lg mt-5 d-flex justify-content-center">Next</button></div></div>');
 
   $("#next").click(function(){
@@ -178,9 +178,9 @@ function formPage(){
     console.log(userDestination);
     var userDate = document.getElementById('datepicker').value;
     console.log(userDate);
-    var userPeople = parseInt(document.getElementById('people').value);
+    var userPeople = document.getElementById('people').value;
     console.log(userPeople);
-    var userNights = parseInt(document.getElementById('nights').value);
+    var userNights = document.getElementById('nights').value;
     console.log(userNights);
 
     if(userDestination === ''){
@@ -197,14 +197,14 @@ function formPage(){
         type: 'error',
         confirmButtonText: 'Ok'
       });
-    }else if(isNaN(userPeople === '')){
+    }else if(userPeople === ''){
       Swal.fire({
         title: 'Invalid!',
         text: 'You did not enter all of the required information correctly. Please enter it before proceeding.',
         type: 'error',
         confirmButtonText: 'Ok'
       });
-    }else if(isNaN(userNights === '')){
+    }else if(userNights === ''){
       Swal.fire({
         title: 'Invalid!',
         text: 'You did not enter all of the required information correctly. Please enter it before proceeding.',
