@@ -218,9 +218,9 @@ function formPage(){
 
 }
 
-formPage();
+// formPage();
 
-// resultsPage();
+resultsPage();
 
 $( function() {
     $( '#datepicker' ).datepicker();
@@ -228,6 +228,8 @@ $( function() {
 
 function resultsPage(){
   $('#mainPageContainer').html('');
+  var resultsHTML = document.getElementById('mainPageContainer');
+  resultsHTML.innerHTML += '<div id="map" class="mt-5 ml-4"></div>';
 }
 
 var map;
