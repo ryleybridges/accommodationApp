@@ -42,3 +42,7 @@ input {
   width: 30%;
   background-color: red;
 }
+
+h6 {
+  font-size: 14px;
+}
