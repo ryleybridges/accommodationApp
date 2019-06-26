@@ -190,7 +190,6 @@ function formPage(){
           type: 'error',
           confirmButtonText: 'Ok'
         });
-
     }else if(userDate === ''){
       Swal.fire({
         title: 'Invalid!',
@@ -220,6 +219,8 @@ function formPage(){
 }
 
 formPage();
+
+// resultsPage();
 
 $( function() {
     $( '#datepicker' ).datepicker();
