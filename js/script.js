@@ -147,21 +147,21 @@ accommodationOptions = [
 
 function startingPage(){
   var startHTML = document.getElementById('mainPageContainer');
-  startHTML.innerHTML += ('<div class="row">');
-  startHTML.innerHTML += ('<div class="col d-flex justify-content-center"><img src="images/tourismlogo.png" alt="Tourism New Zealand logo"></div>')
-  startHTML.innerHTML += ('</div>');
-  startHTML.innerHTML += ('<div class="row">');
-  startHTML.innerHTML += ('<div class="col">');
-  startHTML.innerHTML += ('<h1 class="mt-3 text-center">BookIt Accommodation</h1>');
-  startHTML.innerHTML += ('</div>');
-  startHTML.innerHTML += ('</div>');
-  startHTML.innerHTML += ('<div class="row">');
-  startHTML.innerHTML += ('<div class="col">');
-  startHTML.innerHTML += ('</div>');
-  startHTML.innerHTML += ('<div class="col">');
-  startHTML.innerHTML += ('<button type="button" class="mt-3 btn btn-dark btn-lg d-flex justify-content-center btn-begin" onclick="formPage();">BEGIN</button>')
-  startHTML.innerHTML += ('</div>');
-  startHTML.innerHTML += ('</div>');
+  startHTML.innerHTML += '<div class="row">';
+  startHTML.innerHTML += '<div class="col d-flex justify-content-center"><img src="images/tourismlogo.png" alt="Tourism New Zealand logo"></div>';
+  startHTML.innerHTML += '</div>';
+  startHTML.innerHTML += '<div class="row">';
+  startHTML.innerHTML += '<div class="col">';
+  startHTML.innerHTML += '<h1 class="mt-3 text-center">BookIt Accommodation</h1>';
+  startHTML.innerHTML += '</div>';
+  startHTML.innerHTML += '</div>';
+  startHTML.innerHTML += '<div class="row">';
+  startHTML.innerHTML += '<div class="col">';
+  startHTML.innerHTML += '</div>';
+  startHTML.innerHTML += '<div class="col">';
+  startHTML.innerHTML += '<button type="button" class="mt-3 btn btn-dark btn-lg d-flex justify-content-center btn-begin" onclick="formPage();">BEGIN</button>';
+  startHTML.innerHTML += '</div>';
+  startHTML.innerHTML += '</div>';
 }
 
 // startingPage();
@@ -169,9 +169,9 @@ function startingPage(){
 function formPage(){
   $('#mainPageContainer').html('');
   var formHTML = document.getElementById('mainPageContainer');
-  formHTML.innerHTML += ('<div class="row"> <div class="col"><h4 class="text-center mt-6">Where are you going?</h4><input type="text" id="destination" class="form-control"></div> <div class="col"><h4 class="text-center mt-6">When are you going there?<input type="text" class="form-control" id="datepicker"></div> </div>');
-  formHTML.innerHTML += ('<div class="row"><div class="col"><h4 class="text-center mt-5">How many people are going?</h4><input type="number" class="form-control" id="people" max="5"></div><div class="col"><h4 class="text-center mt-5">How many nights?</h4><input type="number" class="form-control" id="nights" max="15"></div></div>');
-  formHTML.innerHTML += ('<div class="row"><div class="col"><button type="button" id="next" class="btn btn-dark btn-lg mt-5 d-flex justify-content-center">Next</button></div></div>');
+  formHTML.innerHTML += '<div class="row"> <div class="col"><h4 class="text-center mt-6">Where are you going?</h4><input type="text" id="destination" class="form-control"></div> <div class="col"><h4 class="text-center mt-6">When are you going there?<input type="text" class="form-control" id="datepicker"></div> </div>';
+  formHTML.innerHTML += '<div class="row"><div class="col"><h4 class="text-center mt-5">How many people are going?</h4><input type="number" class="form-control" id="people" max="5"></div><div class="col"><h4 class="text-center mt-5">How many nights?</h4><input type="number" class="form-control" id="nights" max="15"></div></div>';
+  formHTML.innerHTML += '<div class="row"><div class="col"><button type="button" id="next" class="btn btn-dark btn-lg mt-5 d-flex justify-content-center">Next</button></div></div>';
 
   $("#next").click(function(){
     var userDestination = document.getElementById('destination').value;
@@ -229,7 +229,9 @@ $( function() {
 function resultsPage(){
   $('#mainPageContainer').html('');
   var resultsHTML = document.getElementById('mainPageContainer');
-  resultsHTML.innerHTML += '<div id="map" class="mt-5 ml-4"></div>';
+  for (var i = 0; i < accommodationOptions.length; i++) {
+  }
+  resultsHTML.innerHTML += '<div class="card" style="width: 18rem;"><img src="' + accommodationOptions[i].image + '" class="card-img-top" alt="..."><div class="card-body"><p class="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p></div></div>';
 }
 
 var map;
