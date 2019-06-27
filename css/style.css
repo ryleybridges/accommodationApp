@@ -50,3 +50,8 @@ h6 {
 .card {
   background-color: #ebeced;
 }
+
+/* .card:hover{
+  border-width: 2px;
+  border-color: black;
+} */
