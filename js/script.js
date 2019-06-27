@@ -226,7 +226,7 @@ function resultsPage(){
   $('#mainPageContainer').html('');
   var resultsHTML = document.getElementById('mainPageContainer');
   for (var i = 0; i < accommodationOptions.length; i++) {
-    resultsHTML.innerHTML += '<div class="card h-100 col-12 col-sm-6 col-md-3 mb-3 d-flex" style="width: 12rem; height: 8rem;"><img src="images/cards/' + accommodationOptions[i].image + '" class="card-img-top" alt="..."><div class="card-body"><h6 class="card-text text-center">' + accommodationOptions[i].title + '</h6><p class="card-text text-center">$' + accommodationOptions[i].cost + '/night</p></div></div>';
+    resultsHTML.innerHTML += '<div class="float-right card h-100 col-12 col-sm-6 col-md-3 mb-3 d-flex border-dark mr-1" style="width: 12rem; height: 8rem;"><img src="images/cards/' + accommodationOptions[i].image + '" class="card-img-top" alt="..."><div class="card-body"><h6 class="card-text text-center">' + accommodationOptions[i].title + '</h6><p class="card-text text-center">$' + accommodationOptions[i].cost + '/night</p></div></div>';
   }
 
 }

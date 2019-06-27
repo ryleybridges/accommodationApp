@@ -2,6 +2,7 @@ body {
   background-image: url('background.jpg');
   background-repeat: no-repeat;
   background-color: black;
+  overflow: hidden;
 }
 
 .container {
@@ -45,4 +46,8 @@ input {
 
 h6 {
   font-size: 14px;
+}
+
+.card {
+  background-color: #ebeced;
 }
