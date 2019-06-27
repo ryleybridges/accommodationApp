@@ -1,6 +1,18 @@
 accommodationOptions = [
   {
     id: 1,
+    title: 'YHA Wellington Backpacker Hostel',
+    type: 'Hostel',
+    cost: 30,
+    // minNight: 1,
+    // maxNight: 10,
+    lat: -41.293066,
+    lng: 174.783989,
+    description: 'Located in the very center of Wellington, this award-winning hostel features 2 fully equipped kitchens and dining areas and a spacious guest lounge room with TV projection screen and free movie hire. 2GB of free WiFi is available each day for all guests.',
+    image: 'yha-wellington-exterior-2-2010-1500.jpg'
+  },
+  {
+    id: 2,
     title: 'Novotel Wellington',
     type: 'Hotel',
     cost: 157,
@@ -12,7 +24,7 @@ accommodationOptions = [
     image: 'novotel.jpg'
   },
   {
-    id: 2,
+    id: 3,
     title: 'InterContinental Wellington',
     type: 'Hotel',
     cost: 157,
@@ -24,7 +36,7 @@ accommodationOptions = [
     image: 'intercontinental-wellington.jpg'
   },
   {
-    id: 3,
+    id: 4,
     title: 'Boulcott Suites',
     type: 'Hotel',
     cost: 157,
@@ -35,18 +47,7 @@ accommodationOptions = [
     description: 'Centrally located in Wellington, Boulcott Suites is a unique 5-star apartment hotel that has been designed and fully furnished with elegance and style. From studio apartments and spacious single-level suites to fully-equipped executive four bedroom townhouses, Boulcott Suites is ideal if you want quality and space. Some apartments also feature balconies.',
     image: 'boulcott.jpg'
   },
-  {
-    id: 4,
-    title: 'YHA Wellington Backpacker Hostel',
-    type: 'Hostel',
-    cost: 30,
-    // minNight: 1,
-    // maxNight: 10,
-    lat: -41.293066,
-    lng: 174.783989,
-    description: 'Located in the very center of Wellington, this award-winning hostel features 2 fully equipped kitchens and dining areas and a spacious guest lounge room with TV projection screen and free movie hire. 2GB of free WiFi is available each day for all guests.',
-    image: 'yha-wellington-exterior-2-2010-1500.jpg'
-  },
+
   {
     id: 5,
     title: 'Nomads Capital Hostel Wellington',
@@ -85,6 +86,18 @@ accommodationOptions = [
   },
   {
     id: 8,
+    title: 'Airport Motor Lodge',
+    type: 'Motel',
+    cost: 90,
+    // minNight: 3,
+    // maxNight: 10,
+    lat: -41.325270,
+    lng: 174.811649,
+    description: 'Located 5 minutes walk or 2 minutes drive from Wellington Airport, Airport Motor Lodge offers fully soundproofed motel. Free onsite parking and a complimentary airport shuttle service are provided.',
+    image: 'airportmotorlodge.jpg'
+  },
+  {
+    id: 9,
     title: 'The Penthouse on Evans Bay',
     type: 'House',
     cost: 240,
@@ -96,7 +109,7 @@ accommodationOptions = [
     image: 'penthouse.jpg'
   },
   {
-    id: 9,
+    id: 10,
     title: 'Wellington City Cottages',
     type: 'House',
     cost: 240,
@@ -108,7 +121,7 @@ accommodationOptions = [
     image: 'citycottage.jpg'
   },
   {
-    id: 10,
+    id: 11,
     title: 'Bella Vista Motel',
     type: 'Motel',
     cost: 90,
@@ -120,7 +133,7 @@ accommodationOptions = [
     image: 'bellavista.jpg'
   },
   {
-    id: 11,
+    id: 12,
     title: 'Marksman Motor Inn',
     type: 'Motel',
     cost: 90,
@@ -130,18 +143,6 @@ accommodationOptions = [
     lng: 174.778582,
     description: 'The Marksman is conveniently located in central Wellington within walking distance of local attractions, the CBD, Courtenay Place entertainment district, and close to the Interisland Ferry Terminal and Wellington City Airport.',
     image: 'marksman.jpg'
-  },
-  {
-    id: 12,
-    title: 'Airport Motor Lodge',
-    type: 'Motel',
-    cost: 90,
-    // minNight: 3,
-    // maxNight: 10,
-    lat: -41.325270,
-    lng: 174.811649,
-    description: 'Located 5 minutes walk or 2 minutes drive from Wellington Airport, Airport Motor Lodge offers fully soundproofed motel. Free onsite parking and a complimentary airport shuttle service are provided.',
-    image: 'airportmotorlodge.jpg'
   }
 ]
 
