@@ -166,8 +166,6 @@ function startingPage(){
 
 startingPage();
 
-
-
 function formPage(){
   $('#mainPageContainer').html('');
   $(function(){
