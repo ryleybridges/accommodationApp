@@ -224,11 +224,15 @@ function formPage(){
 
 function resultsPage(userNights, userDestination, userPeople, userDate){
   $('#mainPageContainer').html('');
-  // if () {
-  //
-  // } else {
-  //
-  // }
+  if (userPeople === 1) {
+    console.log("Show hotel, hostel and house. Hide motel.");
+  }else if(userPeople === 2) {
+    console.log("Show hotel, motel and house. Hide hostel.");
+  }else if(userPeople === 3){
+    console.log("Show motel and house. Hide hostel and hotel.");
+  }else{
+    console.log("Show motel and house. Hide hostel and hotel.");
+  }
   var resultsHTML = document.getElementById('mainPageContainer');
   resultsHTML.innerHTML += '<div class="row">';
   // resultsHTML.innerHTML += '<div id="map"></div>'
