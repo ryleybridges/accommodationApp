@@ -225,7 +225,6 @@ function formPage(){
 function resultsPage(userNights, userDestination, userPeople, userDate){
   $('#mainPageContainer').html('');
   if (userPeople === 1) {
-    console.log("Show hotel, hostel and house. Hide motel.");
   }else if(userPeople === 2) {
     console.log("Show hotel, motel and house. Hide hostel.");
   }else if(userPeople === 3){
