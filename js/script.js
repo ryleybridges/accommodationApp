@@ -251,7 +251,7 @@ function resultsPage(userNights, userDestination, userPeople, userDate){
 }
 
 function accommodationPopUp (){
+  $('#accommodationPopUp').show();
   for (var x = 0; x < accommodationOptions.length; x++) {
-    
   }
 }
