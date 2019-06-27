@@ -226,25 +226,26 @@ function resultsPage(userNights, userDestination, userPeople, userDate){
   $('#mainPageContainer').html('');
   var resultsHTML = document.getElementById('mainPageContainer');
   resultsHTML.innerHTML += '<div class="row">';
+  // resultsHTML.innerHTML += '<div id="map"></div>'
   for (var i = 0; i < accommodationOptions.length; i++) {
     resultsHTML.innerHTML += '<div class="col-sm-3 d-inline-block col-md-3 mb-3 mt-1"><div class="card"><img src="images/cards/' + accommodationOptions[i].image + '" class="card-img-top" alt="' + accommodationOptions[i].title + '"><div class="card-body"><h6 class="card-title text-center">' + accommodationOptions[i].title + '</h6><p class="card-text text-center">Cost: $' + accommodationOptions[i].cost * userNights + '</p></div></div></div>';
   }
   resultsHTML.innerHTML += '</div>';
 
-}
+  var map;
+  function initMap(){
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: -41.286461, lng: 174.776230},
+      zoom: 13,
+      fullscreenControl: false,
+      maxZoom: 18,
+      minZoom: 8,
+      noClear: true,
+      gestureHandling: 'cooperative',
+      style: [
 
-var map;
-function initMap(){
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: -41.286461, lng: 174.776230},
-    zoom: 13,
-    fullscreenControl: false,
-    maxZoom: 18,
-    minZoom: 8,
-    noClear: true,
-    gestureHandling: 'cooperative',
-    style: [
+      ]
+    });
+  }
 
-    ]
-  });
 }
