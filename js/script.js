@@ -13,7 +13,7 @@ accommodationOptions = [
   },
   {
     id: 2,
-    title: 'InterContinetal Wellington',
+    title: 'InterContinental Wellington',
     type: 'Hotel',
     cost: 157,
     // minNight: 1,
@@ -166,7 +166,11 @@ function startingPage(){
 
 // startingPage();
 
-function formPage(){
+$( function() {
+    $( '#datepicker' ).datepicker();
+} );
+
+function formPage(userNights){
   $('#mainPageContainer').html('');
   var formHTML = document.getElementById('mainPageContainer');
   formHTML.innerHTML += '<div class="row"> <div class="col"><h4 class="text-center mt-6">Where are you going?</h4><input type="text" id="destination" class="form-control"></div> <div class="col"><h4 class="text-center mt-6">When are you going there?<input type="text" class="form-control" id="datepicker"></div> </div>';
@@ -218,20 +222,30 @@ function formPage(){
 
 resultsPage();
 
-$( function() {
-    $( '#datepicker' ).datepicker();
-} );
-
 function resultsPage(){
   $('#mainPageContainer').html('');
   var resultsHTML = document.getElementById('mainPageContainer');
+  resultsHTML.innerHTML += '<div class="row">';
   for (var i = 0; i < accommodationOptions.length; i++) {
-    resultsHTML.innerHTML += '<div class="float-right card h-100 col-12 col-sm-6 col-md-3 mb-3 d-flex border-dark mr-2" style="width: 12rem; height: 8rem;"><img src="images/cards/' + accommodationOptions[i].image + '" class="card-img-top" alt="..."><div class="card-body"><h6 class="card-text text-center">' + accommodationOptions[i].title + '</h6><p class="card-text text-center">$' + accommodationOptions[i].cost + '/night</p></div></div>';
+    resultsHTML.innerHTML += '<div class="col-sm-3 d-inline-block col-md-3 mb-3 mt-1"><div class="card"><img src="images/cards/' + accommodationOptions[i].image + '" class="card-img-top" alt="..."><div class="card-body"><h6 class="card-title text-center">' + accommodationOptions[i].title + '</h6><p class="card-text text-center">$</p></div></div></div>';
+    // resultsHTML.innerHTML += '<div class="card h-100 col-12 col-sm-6 col-md-3 mb-3 d-flex mr-2 mt-1" style="width: 12rem; height: 8rem;"><img src="images/cards/' + accommodationOptions[i].image + '" class="card-img-top" alt="..."><div class="card-body"><h6 class="card-text text-center">' + accommodationOptions[i].title + '</h6><p class="card-text text-center">$' + accommodationOptions[i].cost + '/night</p></div></div>';
   }
+  resultsHTML.innerHTML += '</div>';
 
 }
 
 var map;
 function initMap(){
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: -41.286461, lng: 174.776230},
+    zoom: 13,
+    fullscreenControl: false,
+    maxZoom: 18,
+    minZoom: 8,
+    noClear: true,
+    gestureHandling: 'cooperative',
+    style: [
 
+    ]
+  });
 }
