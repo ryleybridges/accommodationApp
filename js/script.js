@@ -164,7 +164,7 @@ function startingPage(){
   startHTML.innerHTML += '</div>';
 }
 
-// startingPage();
+startingPage();
 
 $( function() {
     $( '#datepicker' ).datepicker();
@@ -212,7 +212,7 @@ function formPage(userNights){
         confirmButtonText: 'Ok'
       });
     }else {
-      resultsPage();
+      resultsPage(userNights, userDestination, userPeople, userDate);
     }
   });
 
@@ -220,15 +220,14 @@ function formPage(userNights){
 
 // formPage();
 
-resultsPage();
+// resultsPage();
 
-function resultsPage(){
+function resultsPage(userNights, userDestination, userPeople, userDate){
   $('#mainPageContainer').html('');
   var resultsHTML = document.getElementById('mainPageContainer');
   resultsHTML.innerHTML += '<div class="row">';
   for (var i = 0; i < accommodationOptions.length; i++) {
-    resultsHTML.innerHTML += '<div class="col-sm-3 d-inline-block col-md-3 mb-3 mt-1"><div class="card"><img src="images/cards/' + accommodationOptions[i].image + '" class="card-img-top" alt="..."><div class="card-body"><h6 class="card-title text-center">' + accommodationOptions[i].title + '</h6><p class="card-text text-center">$</p></div></div></div>';
-    // resultsHTML.innerHTML += '<div class="card h-100 col-12 col-sm-6 col-md-3 mb-3 d-flex mr-2 mt-1" style="width: 12rem; height: 8rem;"><img src="images/cards/' + accommodationOptions[i].image + '" class="card-img-top" alt="..."><div class="card-body"><h6 class="card-text text-center">' + accommodationOptions[i].title + '</h6><p class="card-text text-center">$' + accommodationOptions[i].cost + '/night</p></div></div>';
+    resultsHTML.innerHTML += '<div class="col-sm-3 d-inline-block col-md-3 mb-3 mt-1"><div class="card"><img src="images/cards/' + accommodationOptions[i].image + '" class="card-img-top" alt="' + accommodationOptions[i].title + '"><div class="card-body"><h6 class="card-title text-center">' + accommodationOptions[i].title + '</h6><p class="card-text text-center">Cost: $' + accommodationOptions[i].cost * userNights + '</p></div></div></div>';
   }
   resultsHTML.innerHTML += '</div>';
 
