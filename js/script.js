@@ -237,21 +237,21 @@ function resultsPage(userNights, userDestination, userPeople, userDate){
   }
   resultsHTML.innerHTML += '</div>';
 
-  var map;
-  function initMap(){
-    map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: -41.286461, lng: 174.776230},
-      zoom: 13,
-      fullscreenControl: false,
-      maxZoom: 18,
-      minZoom: 8,
-      noClear: true,
-      gestureHandling: 'cooperative',
-      style: [
-
-      ]
-    });
-  }
+  // var map;
+  // function initMap(){
+  //   map = new google.maps.Map(document.getElementById('map'), {
+  //     center: {lat: -41.286461, lng: 174.776230},
+  //     zoom: 13,
+  //     fullscreenControl: false,
+  //     maxZoom: 18,
+  //     minZoom: 8,
+  //     noClear: true,
+  //     gestureHandling: 'cooperative',
+  //     style: [
+  //
+  //     ]
+  //   });
+  // }
 
 }
 
