@@ -170,7 +170,7 @@ $( function() {
     $( '#datepicker' ).datepicker();
 } );
 
-function formPage(userNights){
+function formPage(){
   $('#mainPageContainer').html('');
   var formHTML = document.getElementById('mainPageContainer');
   formHTML.innerHTML += '<div class="row"> <div class="col"><h4 class="text-center mt-6">Where are you going?</h4><input type="text" id="destination" class="form-control"></div> <div class="col"><h4 class="text-center mt-6">When are you going there?<input type="text" class="form-control" id="datepicker"></div> </div>';
@@ -248,4 +248,10 @@ function resultsPage(userNights, userDestination, userPeople, userDate){
     });
   }
 
+}
+
+function accommodationPopUp (){
+  for (var x = 0; x < accommodationOptions.length; x++) {
+    
+  }
 }
