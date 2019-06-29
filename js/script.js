@@ -226,6 +226,7 @@ function formPage(){
 
 function resultsPage(userNights, userDestination, userPeople, userDate){
   $('#mainPageContainer').html('');
+  
   if (userPeople === 1) {
     for (var x = 0; x < accommodationOptions.length; x++) {
       relevantAccommodation.push(accommodationOptions[x].type = "Hostel");
@@ -239,6 +240,7 @@ function resultsPage(userNights, userDestination, userPeople, userDate){
   }else{
     console.log("Show motel and house. Hide hostel and hotel.");
   }
+
   var resultsHTML = document.getElementById('mainPageContainer');
   resultsHTML.innerHTML += '<div class="row">';
   // resultsHTML.innerHTML += '<div id="map"></div>'
