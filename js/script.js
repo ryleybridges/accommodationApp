@@ -249,6 +249,13 @@ function resultsPage(userNights, userDestination, userPeople, userDate){
   }
   resultsHTML.innerHTML += '</div>';
 
+  for (var x = 0; x < accommodationOptions.length; x++) {
+    accommodationOptions[x].onclick = function(){
+      var id = parseInt(this.dataset.id);
+      showAccommodation(id);
+    }
+  }
+
   // var map;
   // function initMap(){
   //   map = new google.maps.Map(document.getElementById('map'), {
@@ -267,9 +274,6 @@ function resultsPage(userNights, userDestination, userPeople, userDate){
 
 }
 
-function accommodationPopUp (){
-  $('#accommodationPopUp').show();
-  for (var x = 0; x < accommodationOptions.length; x++) {
-    
-  }
+function accommodationPopUp (accommodationID){
+  var accommodationClicked;
 }
