@@ -275,12 +275,12 @@ function resultsPage(userNights, userDestination, userPeople, userDate){
 }
 
 function accommodationPopUp (accommodationID){
-  var accommodationClicked;
-  for (var a = 0; a < accommodationOptions.length; a++) {
-    if(accommodationOptions[a].id === accommodationID){
-			singleLocation = accommodationOptions[a];
-      console.log(singleLocation);
-			break;
-		}
-  }
+  // var accommodationClicked;
+  // for (var a = 0; a < accommodationOptions.length; a++) {
+  //   if(accommodationOptions[a].id === accommodationID){
+	// 		singleLocation = accommodationOptions[a];
+  //     console.log(singleLocation);
+	// 		break;
+	// 	}
+  // }
 }
