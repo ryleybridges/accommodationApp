@@ -267,6 +267,6 @@ function resultsPage(userNights, userDestination, userPeople, userDate){
 
 }
 
-function accommodationPopUp (accommodationID){
+function accommodationPopUp (){
 
 }
