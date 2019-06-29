@@ -1,4 +1,4 @@
-accommodationOptions = [
+var accommodationOptions = [
   {
     id: 1,
     title: 'YHA Wellington Backpacker Hostel',
