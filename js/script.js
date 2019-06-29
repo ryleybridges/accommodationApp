@@ -144,7 +144,9 @@ accommodationOptions = [
     description: 'The Marksman is conveniently located in central Wellington within walking distance of local attractions, the CBD, Courtenay Place entertainment district, and close to the Interisland Ferry Terminal and Wellington City Airport.',
     image: 'marksman.jpg'
   }
-]
+];
+
+var relevantAccommodation = [];
 
 function startingPage(){
   var startHTML = document.getElementById('mainPageContainer');
@@ -225,6 +227,11 @@ function formPage(){
 function resultsPage(userNights, userDestination, userPeople, userDate){
   $('#mainPageContainer').html('');
   if (userPeople === 1) {
+    for (var x = 0; x < accommodationOptions.length; x++) {
+      relevantAccommodation.push(accommodationOptions[x].type = "Hostel");
+      return relevantAccommdation;
+    }
+  }
   }else if(userPeople === 2) {
     console.log("Show hotel, motel and house. Hide hostel.");
   }else if(userPeople === 3){
