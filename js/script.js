@@ -251,36 +251,55 @@ function formPage(){
 function resultsPage(userNights, userDestination, userPeople, userDate){
   $('#mainPageContainer').html('');
 
-  var accommodationHotels =  accommodationOptions.filter(function(hotel) {
-	   return hotel.type == "Hotel";
-   });
-
-   var accommodationHouses = accommodationOptions.filter(function(house){
-     return house.type == "House";
-   });
-
-   var accommodationHostels = accommodationOptions.filter(function(hostel){
-     return hostel.type == "Hostel";
-   });
-
-   var accommodationMotels = accommodationOptions.filter(function(motel){
-     return motel.type == "Motel";
-   });
-
-   console.log(accommodationHotels);
-   console.log(accommodationMotels);
-   console.log(accommodationHouses);
-   console.log(accommodationHostels);
-
-  // if (userPeople === 1) {
-  // }
-  // }else if(userPeople === 2) {
-  //   console.log("Show hotel, motel and house. Hide hostel.");
-  // }else if(userPeople === 3){
-  //   console.log("Show motel and house. Hide hostel and hotel.");
-  // }else{
-  //   console.log("Show motel and house. Hide hostel and hotel.");
-  // }
+  // console.log(accommodationHotels);
+   // console.log(accommodationMotels);
+   // console.log(accommodationHouses);
+   // console.log(accommodationHostels);
+   if (userPeople == 1) {
+    var accommodationHotels =  accommodationOptions.filter(function(hotel) {
+  	   return hotel.type == "Hotel";
+     });
+     var accommodationHouses = accommodationOptions.filter(function(house){
+       return house.type == "House";
+     });
+     var accommodationHostels = accommodationOptions.filter(function(hostel){
+       return hostel.type == "Hostel";
+     });
+     console.log(accommodationHotels);
+     console.log(accommodationHouses);
+     console.log(accommodationHostels);
+  }else if(userPeople == 2) {
+    var accommodationMotels = accommodationOptions.filter(function(motel){
+      return motel.type == "Motel";
+    });
+    var accommodationHotels =  accommodationOptions.filter(function(hotel) {
+  	   return hotel.type == "Hotel";
+     });
+     var accommodationHouses = accommodationOptions.filter(function(house){
+       return house.type == "House";
+     });
+     console.log(accommodationHotels);
+     console.log(accommodationHouses);
+     console.log(accommodationMotels);
+  }else if(userPeople == 3){
+    var accommodationMotels = accommodationOptions.filter(function(motel){
+      return motel.type == "Motel";
+    });
+    var accommodationHouses = accommodationOptions.filter(function(house){
+      return house.type == "House";
+    });
+    console.log(accommodationHouses);
+    console.log(accommodationMotels);
+  }else{
+    var accommodationMotels = accommodationOptions.filter(function(motel){
+      return motel.type == "Motel";
+    });
+    var accommodationHouses = accommodationOptions.filter(function(house){
+      return house.type == "House";
+    });
+    console.log(accommodationHouses);
+    console.log(accommodationMotels);
+  }
 
   var resultsHTML = document.getElementById('mainPageContainer');
   resultsHTML.innerHTML += '<div class="row">';
