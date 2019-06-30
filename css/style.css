@@ -1,5 +1,5 @@
 body {
-  background-image: url('background.jpg');
+  background-image: url('803584.jpg');
   background-repeat: no-repeat;
   background-color: black;
   overflow: hidden;
@@ -35,7 +35,7 @@ input {
 }
 
 .mt-6 {
-  margin-top: 6rem !important;
+  margin-top: 7rem !important;
 }
 
 #map{
@@ -49,5 +49,5 @@ h6 {
 }
 
 .card {
-  background-color: #ebeced;
+  background-color: #c2d9fc;
 }

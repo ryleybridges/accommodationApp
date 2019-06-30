@@ -175,7 +175,7 @@ var accommodationOptions = [
 function startingPage(){
   var startHTML = document.getElementById('mainPageContainer');
   startHTML.innerHTML += '<div class="row">';
-  startHTML.innerHTML += '<div class="col d-flex justify-content-center"><img src="images/tourismlogo.png" alt="Tourism New Zealand logo"></div>';
+  startHTML.innerHTML += '<div class="col d-flex justify-content-center mt-5"><img src="images/tourismlogo.png" alt="Tourism New Zealand logo"></div>';
   startHTML.innerHTML += '</div>';
   startHTML.innerHTML += '<div class="row">';
   startHTML.innerHTML += '<div class="col">';
@@ -186,7 +186,7 @@ function startingPage(){
   startHTML.innerHTML += '<div class="col">';
   startHTML.innerHTML += '</div>';
   startHTML.innerHTML += '<div class="col">';
-  startHTML.innerHTML += '<button type="button" class="mt-3 btn btn-dark btn-lg d-flex justify-content-center btn-begin" onclick="formPage();">BEGIN</button>';
+  startHTML.innerHTML += '<button type="button" class="mt-3 btn btn-info btn-lg d-flex justify-content-center btn-begin" onclick="formPage();">BEGIN</button>';
   startHTML.innerHTML += '</div>';
   startHTML.innerHTML += '</div>';
 }
@@ -201,7 +201,7 @@ function formPage(){
   var formHTML = document.getElementById('mainPageContainer');
   formHTML.innerHTML += '<div class="row"> <div class="col"><h4 class="text-center mt-6">Where are you going?</h4><input type="text" id="destination" class="form-control" value="Wellington"></div> <div class="col"><h4 class="text-center mt-6">When are you going there?<input type="text" class="form-control" id="datepicker"></div> </div>';
   formHTML.innerHTML += '<div class="row"><div class="col"><h4 class="text-center mt-5">How many people are going?</h4><input type="number" class="form-control" id="people" min="1" max="4"></div><div class="col"><h4 class="text-center mt-5">How many nights?</h4><input type="number" class="form-control" id="nights" min="1" max="15"></div></div>';
-  formHTML.innerHTML += '<div class="row"><div class="col"><button type="button" id="next" class="btn btn-dark btn-lg mt-5 d-flex justify-content-center">Next</button></div></div>';
+  formHTML.innerHTML += '<div class="row"><div class="col"><button type="button" id="next" class="btn btn-info btn-lg mt-5 d-flex justify-content-center">Next</button></div></div>';
 
   $("#next").click(function(){
     var userDestination = document.getElementById('destination').value;
