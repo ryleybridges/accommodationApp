@@ -269,10 +269,10 @@ function accommodationPopUp(accommodationID){
 		}
   }
 
-  document.getElementById("accommodationImage").src = "images/"+singleAccommodation.poster;
-	document.getElementById("movieTitle").innerText = singleAccommodation.title;
+  document.getElementById("accommodationImage").src = "images/"+singleAccommodation.image;
+	document.getElementById("accommodationTitle").innerText = singleAccommodation.title;
 
-	document.getElementById("movieBio").innerText = singleAccommodation.description;
+	document.getElementById("accommodationDescription").innerText = singleAccommodation.description;
 
 	// document.getElementById("watchButton").innerHTML = "<button type='button' class='btn btn-primary' onclick='watchlist();'>Add To Watchlist</button>";
 }
