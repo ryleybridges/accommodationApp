@@ -260,9 +260,7 @@ function resultsPage(userNights, userDestination, userPeople, userDate){
      var accommodationHostels = accommodationOptions.filter(function(hostel){
        return hostel.type == "Hostel";
      });
-     console.log(accommodationHotels);
-     console.log(accommodationHouses);
-     console.log(accommodationHostels);
+     var relevantAccommodation = accommodationHotels.concat(accommodationHouses, accommodationHostels);
   }else if(userPeople == 2) {
     var accommodationMotels = accommodationOptions.filter(function(motel){
       return motel.type == "Motel";
@@ -273,9 +271,7 @@ function resultsPage(userNights, userDestination, userPeople, userDate){
      var accommodationHouses = accommodationOptions.filter(function(house){
        return house.type == "House";
      });
-     console.log(accommodationHotels);
-     console.log(accommodationHouses);
-     console.log(accommodationMotels);
+     var relevantAccommodation = accommodationMotels.concat(accommodationHotels, accommodationHouses);
   }else if(userPeople == 3){
     var accommodationMotels = accommodationOptions.filter(function(motel){
       return motel.type == "Motel";
@@ -283,8 +279,7 @@ function resultsPage(userNights, userDestination, userPeople, userDate){
     var accommodationHouses = accommodationOptions.filter(function(house){
       return house.type == "House";
     });
-    console.log(accommodationHouses);
-    console.log(accommodationMotels);
+    var relevantAccommodation = accommodationMotels.concat(accommodationHouses);
   }else{
     var accommodationMotels = accommodationOptions.filter(function(motel){
       return motel.type == "Motel";
@@ -292,15 +287,14 @@ function resultsPage(userNights, userDestination, userPeople, userDate){
     var accommodationHouses = accommodationOptions.filter(function(house){
       return house.type == "House";
     });
-    console.log(accommodationHouses);
-    console.log(accommodationMotels);
+    var relevantAccommodation = accommodationMotels.concat(accommodationHouses);
   }
 
   var resultsHTML = document.getElementById('mainPageContainer');
   resultsHTML.innerHTML += '<div class="row">';
   // resultsHTML.innerHTML += '<div id="map"></div>'
-  for (var i = 0; i < accommodationOptions.length; i++) {
-    resultsHTML.innerHTML += '<div class="col-sm-3 d-inline-block col-md-3 mb-3 mt-1" onclick="accommodationPopUp();"><div class="card"><img src="images/cards/' + accommodationOptions[i].image + '" class="card-img-top" alt="' + accommodationOptions[i].title + '"><div class="card-body"><h6 class="card-title text-center">' + accommodationOptions[i].title + '</h6><p class="card-text text-center">Cost: $' + accommodationOptions[i].cost * userNights + '</p></div></div></div>';
+  for (var i = 0; i < relevantAccommodation.length; i++) {
+    resultsHTML.innerHTML += '<div class="col-sm-3 d-inline-block col-md-3 mb-3 mt-1" onclick="accommodationPopUp();"><div class="card"><img src="images/cards/' + relevantAccommodation[i].image + '" class="card-img-top" alt="' + relevantAccommodation[i].title + '"><div class="card-body"><h6 class="card-title text-center">' + relevantAccommodation[i].title + '</h6><p class="card-text text-center">Cost: $' + relevantAccommodation[i].cost * userNights + '</p></div></div></div>';
   }
   resultsHTML.innerHTML += '</div>';
 
