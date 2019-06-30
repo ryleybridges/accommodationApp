@@ -200,6 +200,8 @@ function formPage(){
 
 // resultsPage();
 
+$('#accommodationPopUp').hide();
+
 function resultsPage(userNights, userDestination, userPeople, userDate){
   $('#mainPageContainer').html('');
    if (userPeople == 1) {
@@ -266,4 +268,12 @@ function accommodationPopUp(accommodationID){
 			break;
 		}
   }
+
+  document.getElementById("accommodationImage").src = "images/"+singleAccommodation.poster;
+	document.getElementById("movieTitle").innerText = singleAccommodation.title;
+
+	document.getElementById("movieBio").innerText = singleAccommodation.description;
+
+	document.getElementById("watchButton").innerHTML = "<button type='button' class='btn btn-primary' onclick='watchlist();'>Add To Watchlist</button>";
+
 }

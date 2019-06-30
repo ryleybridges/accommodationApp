@@ -52,3 +52,24 @@ h6 {
   background-color: #7755b6;
   border-style: none;
 }
+
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.8);
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+
+.overlayContent {
+	width: 80vw;
+	max-height: 70vh;
+	height: 70vh;
+	background-color: white;
+	padding: 10px;
+	position: relative;
+}
