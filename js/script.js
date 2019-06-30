@@ -274,6 +274,5 @@ function accommodationPopUp(accommodationID){
 
 	document.getElementById("movieBio").innerText = singleAccommodation.description;
 
-	document.getElementById("watchButton").innerHTML = "<button type='button' class='btn btn-primary' onclick='watchlist();'>Add To Watchlist</button>";
-
+	// document.getElementById("watchButton").innerHTML = "<button type='button' class='btn btn-primary' onclick='watchlist();'>Add To Watchlist</button>";
 }
