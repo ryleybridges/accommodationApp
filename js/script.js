@@ -253,6 +253,7 @@ function resultsPage(userNights, userDestination, userPeople, userDate){
 
   if (userPeople === 1) {
     relevantAccommodation = accommodationOptions.filter(){
+      
     }
   }
   // }else if(userPeople === 2) {
