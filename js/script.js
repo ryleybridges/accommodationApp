@@ -170,7 +170,7 @@ var accommodationOptions = [
   }
 ];
 
-var relevantAccommodation = [];
+// var relevantAccommodation = [];
 
 function startingPage(){
   var startHTML = document.getElementById('mainPageContainer');
@@ -251,11 +251,29 @@ function formPage(){
 function resultsPage(userNights, userDestination, userPeople, userDate){
   $('#mainPageContainer').html('');
 
-  if (userPeople === 1) {
-    relevantAccommodation = accommodationOptions.filter(){
-      
-    }
-  }
+  var accommodationHotels =  accommodationOptions.filter(function(hotel) {
+	   return hotel.type == "Hotel";
+   });
+
+   var accommodationHouses = accommodationOptions.filter(function(house){
+     return house.type == "House";
+   });
+
+   var accommodationHostels = accommodationOptions.filter(function(hostel){
+     return hostel.type == "Hostel";
+   });
+
+   var accommodationMotels = accommodationOptions.filter(function(motel){
+     return motel.type == "Motel";
+   });
+
+   console.log(accommodationHotels);
+   console.log(accommodationMotels);
+   console.log(accommodationHouses);
+   console.log(accommodationHostels);
+
+  // if (userPeople === 1) {
+  // }
   // }else if(userPeople === 2) {
   //   console.log("Show hotel, motel and house. Hide hostel.");
   // }else if(userPeople === 3){
@@ -267,8 +285,8 @@ function resultsPage(userNights, userDestination, userPeople, userDate){
   var resultsHTML = document.getElementById('mainPageContainer');
   resultsHTML.innerHTML += '<div class="row">';
   // resultsHTML.innerHTML += '<div id="map"></div>'
-  for (var i = 0; i < accommodationOptions.length; i++) {
-    resultsHTML.innerHTML += '<div class="col-sm-3 d-inline-block col-md-3 mb-3 mt-1" onclick="accommodationPopUp();"><div class="card"><img src="images/cards/' + accommodationOptions[i].image + '" class="card-img-top" alt="' + accommodationOptions[i].title + '"><div class="card-body"><h6 class="card-title text-center">' + accommodationOptions[i].title + '</h6><p class="card-text text-center">Cost: $' + accommodationOptions[i].cost * userNights + '</p></div></div></div>';
+  for (var i = 0; i < accommodationHotels.length; i++) {
+    resultsHTML.innerHTML += '<div class="col-sm-3 d-inline-block col-md-3 mb-3 mt-1" onclick="accommodationPopUp();"><div class="card"><img src="images/cards/' + accommodationHotels[i].image + '" class="card-img-top" alt="' + accommodationHotels[i].title + '"><div class="card-body"><h6 class="card-title text-center">' + accommodationHotels[i].title + '</h6><p class="card-text text-center">Cost: $' + accommodationHotels[i].cost * userNights + '</p></div></div></div>';
   }
   resultsHTML.innerHTML += '</div>';
 
