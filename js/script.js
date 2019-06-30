@@ -199,7 +199,7 @@ function formPage(){
       $('#datepicker').datepicker();
   });
   var formHTML = document.getElementById('mainPageContainer');
-  formHTML.innerHTML += '<div class="row"> <div class="col"><h4 class="text-center mt-6">Where are you going?</h4><input type="text" id="destination" class="form-control"></div> <div class="col"><h4 class="text-center mt-6">When are you going there?<input type="text" class="form-control" id="datepicker"></div> </div>';
+  formHTML.innerHTML += '<div class="row"> <div class="col"><h4 class="text-center mt-6">Where are you going?</h4><input type="text" id="destination" class="form-control" value="Wellington"></div> <div class="col"><h4 class="text-center mt-6">When are you going there?<input type="text" class="form-control" id="datepicker"></div> </div>';
   formHTML.innerHTML += '<div class="row"><div class="col"><h4 class="text-center mt-5">How many people are going?</h4><input type="number" class="form-control" id="people" min="1" max="4"></div><div class="col"><h4 class="text-center mt-5">How many nights?</h4><input type="number" class="form-control" id="nights" min="1" max="15"></div></div>';
   formHTML.innerHTML += '<div class="row"><div class="col"><button type="button" id="next" class="btn btn-dark btn-lg mt-5 d-flex justify-content-center">Next</button></div></div>';
 
@@ -294,28 +294,19 @@ function resultsPage(userNights, userDestination, userPeople, userDate){
   resultsHTML.innerHTML += '<div class="row">';
   // resultsHTML.innerHTML += '<div id="map"></div>'
   for (var i = 0; i < relevantAccommodation.length; i++) {
-    resultsHTML.innerHTML += '<div class="col-sm-3 d-inline-block col-md-3 mb-3 mt-1" onclick="accommodationPopUp();"><div class="card"><img src="images/cards/' + relevantAccommodation[i].image + '" class="card-img-top" alt="' + relevantAccommodation[i].title + '"><div class="card-body"><h6 class="card-title text-center">' + relevantAccommodation[i].title + '</h6><p class="card-text text-center">Cost: $' + relevantAccommodation[i].cost * userNights + '</p></div></div></div>';
+    resultsHTML.innerHTML += '<div class="col-sm-3 d-inline-block col-md-3 mb-3 mt-1 accommodationClick"><div class="card"><img src="images/cards/' + relevantAccommodation[i].image + '" class="card-img-top" alt="' + relevantAccommodation[i].title + '"><div class="card-body"><h6 class="card-title text-center">' + relevantAccommodation[i].title + '</h6><p class="card-text text-center">Cost: $' + relevantAccommodation[i].cost * userNights + '</p></div></div></div>';
   }
   resultsHTML.innerHTML += '</div>';
 
-  // var map;
-  // function initMap(){
-  //   map = new google.maps.Map(document.getElementById('map'), {
-  //     center: {lat: -41.286461, lng: 174.776230},
-  //     zoom: 13,
-  //     fullscreenControl: false,
-  //     maxZoom: 18,
-  //     minZoom: 8,
-  //     noClear: true,
-  //     gestureHandling: 'cooperative',
-  //     style: [
-  //
-  //     ]
-  //   });
-  // }
-
+  var popUp = document.getElementsByClassName('accommodationClick');
+  for (var b = 0; b < popUp.length; b++) {
+    popUp[b].onclick = function(){
+      var id = parseInt(this.dataset.id);
+      accommodationPopUp(id);
+    }
+  }
 }
 
-function accommodationPopUp (){
-
+function accommodationPopUp(accommodationID){
+  console.log(accommodationID);
 }
