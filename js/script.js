@@ -300,8 +300,9 @@ function resultsPage(userNights, userDestination, userPeople, userDate){
   var popUp = document.getElementsByClassName('accommodationClick');
   for (var b = 0; b < popUp.length; b++) {
     popUp[b].onclick = function(){
-      var id = parseInt(this.dataset.id);
-      accommodationPopUp(id);
+      // var id = accommodationOptions.id;
+      // accommodationPopUp(id);
+      console.log(accommodationOptions.id);
     }
   }
 }
