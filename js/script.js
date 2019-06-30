@@ -252,12 +252,18 @@ function resultsPage(userNights, userDestination, userPeople, userDate){
   var popUp = document.getElementsByClassName('accommodationClick');
   for (var b = 0; b < popUp.length; b++) {
     popUp[b].onclick = function(){
-      var relevantID = relevantAccommodation["id"];
-      console.log(relevantID);
+      var id = parseInt(this.dataset.id);
+				accommodationPopUp(id);
     }
   }
 }
 
 function accommodationPopUp(accommodationID){
-  console.log(accommodationID);
+  var singleAccommodation;
+	for (var y = 0; y < accommodationOptions.length; y++){
+		if(accommodationOptions[y].id === accommodationID){
+			singleAccommodation = accommodationOptions[y];
+			break;
+		}
+  }
 }
