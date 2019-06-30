@@ -29,7 +29,7 @@ var accommodationOptions = [
   },
   {
     id: 3,
-    title: 'InterContinental Wellington',
+    title: 'InterContinental',
     type: 'Hotel',
     cost: 157,
     minNight: 1,
@@ -86,7 +86,7 @@ var accommodationOptions = [
   },
   {
     id: 7,
-    title: 'The Wellington Container House',
+    title: 'Wellington Container House',
     type: 'House',
     cost: 240,
     minNight: 2,
@@ -114,7 +114,7 @@ var accommodationOptions = [
   },
   {
     id: 9,
-    title: 'The Penthouse on Evans Bay',
+    title: 'The Penthouse',
     type: 'House',
     cost: 240,
     minNight: 2,
@@ -261,7 +261,7 @@ function resultsPage(userNights, userDestination, userPeople, userDate){
        return hostel.type == "Hostel";
      });
      var relevantAccommodation = accommodationHotels.concat(accommodationHouses, accommodationHostels);
-  }else if(userPeople == 2) {
+  } else if(userPeople == 2) {
     var accommodationMotels = accommodationOptions.filter(function(motel){
       return motel.type == "Motel";
     });
@@ -272,7 +272,7 @@ function resultsPage(userNights, userDestination, userPeople, userDate){
        return house.type == "House";
      });
      var relevantAccommodation = accommodationMotels.concat(accommodationHotels, accommodationHouses);
-  }else if(userPeople == 3){
+  } else if(userPeople == 3){
     var accommodationMotels = accommodationOptions.filter(function(motel){
       return motel.type == "Motel";
     });
@@ -280,7 +280,7 @@ function resultsPage(userNights, userDestination, userPeople, userDate){
       return house.type == "House";
     });
     var relevantAccommodation = accommodationMotels.concat(accommodationHouses);
-  }else{
+  } else{
     var accommodationMotels = accommodationOptions.filter(function(motel){
       return motel.type == "Motel";
     });
@@ -294,7 +294,7 @@ function resultsPage(userNights, userDestination, userPeople, userDate){
   resultsHTML.innerHTML += '<div class="row">';
   // resultsHTML.innerHTML += '<div id="map"></div>'
   for (var i = 0; i < relevantAccommodation.length; i++) {
-    resultsHTML.innerHTML += '<div class="col-sm-3 d-inline-block col-md-3 mb-3 mt-1 ml-1 accommodationClick"><div class="card" style="width:13rem;"><img src="images/cards/' + relevantAccommodation[i].image + '" class="card-img-top" alt="' + relevantAccommodation[i].title + '"><div class="card-body"><h6 class="card-title text-center">' + relevantAccommodation[i].title + '</h6><p class="card-text text-center">Cost: $' + relevantAccommodation[i].cost * userNights + '</p></div></div></div>';
+    resultsHTML.innerHTML += '<div class="col-sm-3 d-inline-block col-md-3 mb-3 mt-1 accommodationClick"><div class="card" style="width:13rem;"><img src="images/cards/' + relevantAccommodation[i].image + '" class="card-img-top" alt="' + relevantAccommodation[i].title + '"><div class="card-body"><h6 class="card-title text-center">' + relevantAccommodation[i].title + '</h6><p class="card-text text-center">Cost: $' + relevantAccommodation[i].cost * userNights + '</p></div></div></div>';
   }
   resultsHTML.innerHTML += '</div>';
 
