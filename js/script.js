@@ -129,14 +129,14 @@ function startingPage(){
   startHTML.innerHTML += '</div>';
   startHTML.innerHTML += '<div class="row">';
   startHTML.innerHTML += '<div class="col">';
-  startHTML.innerHTML += '<h1 class="mt-3 text-center">BookIt Accommodation</h1>';
+  startHTML.innerHTML += '<h1 class="mt-3 text-center display-4">BookIt Accommodation</h1>';
   startHTML.innerHTML += '</div>';
   startHTML.innerHTML += '</div>';
   startHTML.innerHTML += '<div class="row">';
   startHTML.innerHTML += '<div class="col">';
   startHTML.innerHTML += '</div>';
   startHTML.innerHTML += '<div class="col">';
-  startHTML.innerHTML += '<button type="button" class="mt-3 btn btn-info btn-lg d-flex justify-content-center btn-begin" onclick="formPage();">BEGIN</button>';
+  startHTML.innerHTML += '<button type="button" class="mt-3 btn btn-info btn-lg d-flex justify-content-center btn-begin" onclick="formPage();">START</button>';
   startHTML.innerHTML += '</div>';
   startHTML.innerHTML += '</div>';
 }
@@ -272,7 +272,7 @@ function accommodationPopUp(accommodationID){
 
 	document.getElementById('accommodationDescription').innerText = singleAccommodation.description;
 
-  document.getElementById('mealInput').innerHTML = '<div class="form-group"><label for="exampleFormControlSelect1">Breakfast - $7</label><select class="form-control" id="exampleFormControlSelect1"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select><div class="form-group"><label for="exampleFormControlSelect1">Lunch - $9</label><select class="form-control" id="exampleFormControlSelect1"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select><div class="form-group"><label for="exampleFormControlSelect1">Dinner - $11</label><select class="form-control" id="exampleFormControlSelect1"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>';
+  document.getElementById('mealInput').innerHTML = '<div class="form-group"><label for="exampleFormControlSelect1">Breakfast - $7</label><select class="form-control" id="exampleFormControlSelect1"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select><div class="form-group"><label for="exampleFormControlSelect1">Lunch - $9</label><select class="form-control" id="exampleFormControlSelect1"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select><div class="form-group"><label for="exampleFormControlSelect1">Dinner - $11</label><select class="form-control" id="exampleFormControlSelect1"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>';
 
   document.getElementById('bookButton').innerHTML = '<button type="button" class="btn-info btn btn-lg">Book</button>';
 
