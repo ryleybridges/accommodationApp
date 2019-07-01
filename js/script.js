@@ -122,6 +122,8 @@ var accommodationOptions = [
   }
 ];
 
+$('#accommodationPopUp').hide();
+
 function startingPage(){
   var startHTML = document.getElementById('mainPageContainer');
   startHTML.innerHTML += '<div class="row">';
@@ -141,7 +143,7 @@ function startingPage(){
   startHTML.innerHTML += '</div>';
 }
 
-startingPage();
+// startingPage();
 
 function formPage(){
   $('#mainPageContainer').html('');
@@ -198,21 +200,19 @@ function formPage(){
 
 // resultsPage();
 
-$('#accommodationPopUp').hide();
-
 function resultsPage(userNights, userDestination, userPeople, userDate){
   $('#mainPageContainer').html('');
    if (userPeople == 1) {
     var accommodationHotels =  accommodationOptions.filter(function(hotel) {
-  	   return hotel.type == "Hotel";
-     });
-     var accommodationHouses = accommodationOptions.filter(function(house){
-       return house.type == "House";
-     });
-     var accommodationHostels = accommodationOptions.filter(function(hostel){
-       return hostel.type == "Hostel";
-     });
-     var relevantAccommodation = accommodationHotels.concat(accommodationHouses, accommodationHostels);
+     	 return hotel.type == "Hotel";
+    });
+    var accommodationHouses = accommodationOptions.filter(function(house){
+      return house.type == "House";
+    });
+    var accommodationHostels = accommodationOptions.filter(function(hostel){
+      return hostel.type == "Hostel";
+    });
+    var relevantAccommodation = accommodationHotels.concat(accommodationHouses, accommodationHostels);
   } else if(userPeople == 2) {
     var accommodationMotels = accommodationOptions.filter(function(motel){
       return motel.type == "Motel";
@@ -272,9 +272,9 @@ function accommodationPopUp(accommodationID){
 
 	document.getElementById('accommodationDescription').innerText = singleAccommodation.description;
 
-  document.getElementById('mealInput').innerHTML = '<div class="form-group"><label for="exampleFormControlSelect1">Breakfast - $7</label><select class="form-control" id="exampleFormControlSelect1"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select><div class="form-group"><label for="exampleFormControlSelect1">Lunch - $9</label><select class="form-control" id="exampleFormControlSelect1"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select><div class="form-group"><label for="exampleFormControlSelect1">Dinner - $11</label><select class="form-control" id="exampleFormControlSelect1"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>';
+  document.getElementById('mealInput').innerHTML = '<div class="form-group"><label for="exampleFormControlSelect1">Breakfast - $7</label><select class="form-control" id="exampleFormControlSelect1"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select><div class="form-group"><label for="exampleFormControlSelect1">Lunch - $9</label><select class="form-control" id="exampleFormControlSelect1"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select><div class="form-group"><label for="exampleFormControlSelect1">Dinner - $11</label><select class="form-control" id="exampleFormControlSelect1"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select>';
 
-  document.getElementById('bookButton').innerHTML = '<button type="button" class="btn-info btn btn-lg">Book</button>';
+  document.getElementById('bookButton').innerHTML = '<button type="button" class="btn-info btn btn-lg" onclick="confirmPage();">Book</button>';
 
   document.getElementById('accommodationPopUp').style.display = 'flex';
 	document.body.style.overflow = 'hidden';
@@ -289,4 +289,9 @@ document.getElementById('close').onclick = function(){
 function confirmPage(){
   $('#mainPageContainer').hide();
   $('#accommodationPopUp').hide();
+  var confirmPage = document.getElementById('mainPageContainer');
+  confirmPage.innerHTML += '<div class="row"><h5 class="text-center display-3">Confirmation</h5></div>';
+  confirmPage.innerHTML += 'div class="row"></div>';
 }
+
+confirmPage();
