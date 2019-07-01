@@ -267,17 +267,26 @@ function accommodationPopUp(accommodationID){
 		}
   }
 
-  document.getElementById("accommodationImage").src = "images/"+singleAccommodation.image;
-	document.getElementById("accommodationTitle").innerText = singleAccommodation.title;
+  document.getElementById('accommodationImage').src = 'images/'+singleAccommodation.image;
+	document.getElementById('accommodationTitle').innerText = singleAccommodation.title;
 
-	document.getElementById("accommodationDescription").innerText = singleAccommodation.description;
+	document.getElementById('accommodationDescription').innerText = singleAccommodation.description;
 
-  document.getElementById("moviePopUp").style.display = "flex";
-	document.body.style.overflow = "hidden";
+  document.getElementById('mealInput').innerHTML = '<div class="form-group"><label for="exampleFormControlSelect1">Breakfast - $7</label><select class="form-control" id="exampleFormControlSelect1"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select><div class="form-group"><label for="exampleFormControlSelect1">Lunch - $9</label><select class="form-control" id="exampleFormControlSelect1"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select><div class="form-group"><label for="exampleFormControlSelect1">Dinner - $11</label><select class="form-control" id="exampleFormControlSelect1"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>';
+
+  document.getElementById('bookButton').innerHTML = '<button type="button" class="btn-info btn btn-lg">Book</button>';
+
+  document.getElementById('accommodationPopUp').style.display = 'flex';
+	document.body.style.overflow = 'hidden';
 
 }
 
-document.getElementById("close").onclick = function(){
-	document.getElementById("moviePopUp").style.display = "none";
-	document.body.style.overflow = "scroll";
+document.getElementById('close').onclick = function(){
+	document.getElementById('accommodationPopUp').style.display = 'none';
+	document.body.style.overflow = 'scroll';
 };
+
+function confirmPage(){
+  $('#mainPageContainer').hide();
+  $('#accommodationPopUp').hide();
+}
