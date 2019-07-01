@@ -26,7 +26,7 @@ var accommodationOptions = [
     cost: 157,
     lat: -41.284636,
     lng: 174.776942,
-    description: 'The 5-star InterContinental Wellington is located by the harbor waterfront, just 5 mi from Wellington International Airport. It offers an exclusive club lounge, a fitness center, 2 restaurants and a bar. The elegant guest rooms are spacious and well-furnished. All rooms feature a TV with cable channels and a large bathroom with modern amenities and bathrobes. Some rooms include access to the club lounge.',
+    description: 'The 5-star InterContinental Wellington is located by the harbor waterfront, just 5 mi from Wellington International Airport. It offers an exclusive club lounge, a fitness center, 2 restaurants and a bar. The elegant guest rooms are spacious and well-furnished. All rooms feature a TV and a large bathroom with modern amenities.',
     image: 'intercontinental-wellington.jpg'
   },
   {
@@ -67,7 +67,7 @@ var accommodationOptions = [
     cost: 240,
     lat: -41.334940,
     lng: 174.757320,
-    description: 'This magical and unique holiday home is constructed using 3 vertically stacked shipping containers interlinked by spacious outdoor areas and a spiral staircase. Facilities include a hydrotherapy spa, free fast wifi internet, private cinema room with projector screen, full cooking facilities, designer furniture throughout, a macrocarpa bathhouse and secure parking. The outdoor areas are perfect for entertaining, with a full BBQ, an outdoor shower (for the brave) and your own private waterfall!',
+    description: 'This magical and unique holiday home is constructed using 3 vertically stacked shipping containers interlinked by spacious outdoor areas and a spiral staircase. Facilities include a hydrotherapy spa, free fast wifi internet, private cinema room with projector screen, full cooking facilities, designer furniture throughout, a macrocarpa bathhouse and secure parking.',
     image: 'containerhouse.jpg'
   },
   {
@@ -97,7 +97,7 @@ var accommodationOptions = [
     cost: 240,
     lat: -41.296782,
     lng: 174.773548,
-    description: 'Just 1.2 mi from Oriental Bay, Wellington City Cottages offer self-contained accommodations with a private patio. The property features free WiFi and a lovely garden. Free parking is available on site. City Cottages Wellington are 15 minutes’ walk from the famous Te Papa Museum. Westpac Stadium, the Interislander Ferry Terminal and Wellington International Airport are all just a 10-minute drive away.',
+    description: 'Just 1.2 mi from Oriental Bay, Wellington City Cottages offer self-contained accommodations with a private patio. The property features free WiFi and a lovely garden. City Cottages Wellington are 15 minutes’ walk from the famous Te Papa Museum. Westpac Stadium, the Interislander Ferry Terminal and Wellington International Airport are all just a 10-minute drive away.',
     image: 'citycottage.jpg'
   },
   {
@@ -272,12 +272,19 @@ function accommodationPopUp(accommodationID){
 
 	document.getElementById('accommodationDescription').innerText = singleAccommodation.description;
 
-  document.getElementById('mealInput').innerHTML = '<div class="form-group"><label for="breakfast">Breakfast - $7</label><select class="form-control" id="breakfast"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select><div class="form-group"><label for="lunch">Lunch - $9</label><select class="form-control" id="lunch"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select><div class="form-group"><label for="dinner">Dinner - $11</label><select class="form-control" id="dinner"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select>';
+  document.getElementById('mealInput').innerHTML = '<div class="form-group"><label for="breakfast">Breakfast - $7</label><select class="form-control" id="breakfast"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select><div class="form-group"><label for="lunch">Lunch - $9</label><select class="form-control" id="lunch"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select><div class="form-group"><label for="dinner">Dinner - $10</label><select class="form-control" id="dinner"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select>';
 
-  document.getElementById('bookButton').innerHTML = '<button type="button" class="btn-info btn btn-lg" onclick="confirmPage();">Book</button>';
+  document.getElementById('bookButton').innerHTML = '<button type="button" class="btn-info btn btn-lg">Book</button>';
 
   document.getElementById('accommodationPopUp').style.display = 'flex';
 	document.body.style.overflow = 'hidden';
+
+  $("#bookButton").click(function(){
+    var userBreakfast = document.getElementById('breakfast').value;
+    var userLunch = document.getElementById('lunch').value;
+    var userDinner = document.getElementById('dinner').value;
+    confirmPage(userBreakfast, userLunch, userDinner);
+  });
 
 }
 
@@ -285,18 +292,22 @@ document.getElementById('close').onclick = function(){
 	document.getElementById('accommodationPopUp').style.display = 'none';
 	document.body.style.overflow = 'scroll';
 
-  var userBreakfast = document.getElementById('breakfast').value;
-  var userLunch = document.getElementById('lunch').value;
-  var userDinner = document.getElementById('dinner').value;
-  confirmPage(userBreakfast, userLunch, userDinner);
 };
 
 function confirmPage(userBreakfast, userLunch, userDinner){
-  $('#mainPageContainer').hide();
+  $('#mainPageContainer').html('');
   $('#accommodationPopUp').hide();
-  var confirmPage = document.getElementById('mainPageContainer');
-  confirmPage.innerHTML += '<div class="row"><h5 class="text-center display-3">Confirmation</h5></div>';
-  confirmPage.innerHTML += '<div class="row"><div class="col"><button type="button" id="next" class="btn btn-info btn-lg mt-5 d-flex justify-content-center" onclick="emailPopUp();">Send Confirmation Email</button></div></div>';
+  calcBreakfast = (userBreakfast * 7);
+  calcLunch = (userLunch * 9);
+  calcDinner = (userDinner * 10);
+  console.log(calcBreakfast);
+  console.log(calcLunch);
+  console.log(calcDinner);
+
+  var confirmHTML = document.getElementById('mainPageContainer');
+  confirmHTML.innerHTML += '<div class="row"><div class="col"><h5 class="text-center display-4">Confirmation</h5></div></div>';
+  confirmHTML.innerHTML += '<div class="row"><div class="col"></div></div>';
+  confirmHTML.innerHTML += '<div class="row"><div class="col"><button type="button" id="next" class="btn btn-info btn-lg mt-5 d-flex justify-content-center" onclick="emailPopUp();">Send Confirmation Email</button></div></div>';
 }
 
 function emailPopUp(){
