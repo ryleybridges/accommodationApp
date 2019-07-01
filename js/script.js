@@ -284,8 +284,8 @@ function accommodationPopUp(accommodationID){
     var userLunch = document.getElementById('lunch').value;
     var userDinner = document.getElementById('dinner').value;
     var chosenAccommodation = singleAccommodation;
-    // var accommodationCost = parseInt(chosenAccommodation.value * userNights);
-    confirmPage(userBreakfast, userLunch, userDinner, chosenAccommodation, accommodationCost);
+    // console.log(singleAccommodation.cost);
+    confirmPage(userBreakfast, userLunch, userDinner, chosenAccommodation);
   });
 
 }
@@ -296,13 +296,12 @@ document.getElementById('close').onclick = function(){
 
 };
 
-function confirmPage(userBreakfast, userLunch, userDinner, chosenAccommodation, accommodationCost){
+function confirmPage(userBreakfast, userLunch, userDinner, chosenAccommodation){
   $('#mainPageContainer').html('');
   $('#accommodationPopUp').hide();
   calcBreakfast = (userBreakfast * 7);
   calcLunch = (userLunch * 9);
   calcDinner = (userDinner * 10);
-  console.log(accommodationCost);
 
   var confirmHTML = document.getElementById('mainPageContainer');
   confirmHTML.innerHTML += '<div class="row"><div class="col"><h5 class="text-center display-4">Confirmation</h5></div></div>';
