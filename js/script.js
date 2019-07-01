@@ -143,7 +143,7 @@ function startingPage(){
   startHTML.innerHTML += '</div>';
 }
 
-// startingPage();
+startingPage();
 
 function formPage(){
   $('#mainPageContainer').html('');
@@ -272,7 +272,7 @@ function accommodationPopUp(accommodationID){
 
 	document.getElementById('accommodationDescription').innerText = singleAccommodation.description;
 
-  document.getElementById('mealInput').innerHTML = '<div class="form-group"><label for="exampleFormControlSelect1">Breakfast - $7</label><select class="form-control" id="exampleFormControlSelect1"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select><div class="form-group"><label for="exampleFormControlSelect1">Lunch - $9</label><select class="form-control" id="exampleFormControlSelect1"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select><div class="form-group"><label for="exampleFormControlSelect1">Dinner - $11</label><select class="form-control" id="exampleFormControlSelect1"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select>';
+  document.getElementById('mealInput').innerHTML = '<div class="form-group"><label for="breakfast">Breakfast - $7</label><select class="form-control" id="breakfast"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select><div class="form-group"><label for="lunch">Lunch - $9</label><select class="form-control" id="lunch"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select><div class="form-group"><label for="dinner">Dinner - $11</label><select class="form-control" id="dinner"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select>';
 
   document.getElementById('bookButton').innerHTML = '<button type="button" class="btn-info btn btn-lg" onclick="confirmPage();">Book</button>';
 
@@ -284,14 +284,31 @@ function accommodationPopUp(accommodationID){
 document.getElementById('close').onclick = function(){
 	document.getElementById('accommodationPopUp').style.display = 'none';
 	document.body.style.overflow = 'scroll';
+
+  var userBreakfast = document.getElementById('breakfast').value;
+  var userLunch = document.getElementById('lunch').value;
+  var userDinner = document.getElementById('dinner').value;
+  confirmPage(userBreakfast, userLunch, userDinner);
 };
 
-function confirmPage(){
+function confirmPage(userBreakfast, userLunch, userDinner){
   $('#mainPageContainer').hide();
   $('#accommodationPopUp').hide();
   var confirmPage = document.getElementById('mainPageContainer');
   confirmPage.innerHTML += '<div class="row"><h5 class="text-center display-3">Confirmation</h5></div>';
-  confirmPage.innerHTML += 'div class="row"></div>';
+  confirmPage.innerHTML += '<div class="row"><div class="col"><button type="button" id="next" class="btn btn-info btn-lg mt-5 d-flex justify-content-center" onclick="emailPopUp();">Send Confirmation Email</button></div></div>';
 }
 
-confirmPage();
+function emailPopUp(){
+  const {value: email} = Swal.fire({
+    title: 'Input email address',
+    input: 'email',
+    inputPlaceholder: 'Enter your email address'
+  })
+
+  if (email) {
+    Swal.fire('Entered email: ' + email)
+  }
+}
+
+// confirmPage();
