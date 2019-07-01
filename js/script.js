@@ -122,8 +122,6 @@ var accommodationOptions = [
   }
 ];
 
-// var relevantAccommodation = [];
-
 function startingPage(){
   var startHTML = document.getElementById('mainPageContainer');
   startHTML.innerHTML += '<div class="row">';
@@ -274,5 +272,12 @@ function accommodationPopUp(accommodationID){
 
 	document.getElementById("accommodationDescription").innerText = singleAccommodation.description;
 
-	// document.getElementById("watchButton").innerHTML = "<button type='button' class='btn btn-primary' onclick='watchlist();'>Add To Watchlist</button>";
+  document.getElementById("moviePopUp").style.display = "flex";
+	document.body.style.overflow = "hidden";
+
 }
+
+document.getElementById("close").onclick = function(){
+	document.getElementById("moviePopUp").style.display = "none";
+	document.body.style.overflow = "scroll";
+};

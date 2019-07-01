@@ -73,3 +73,21 @@ h6 {
 	padding: 10px;
 	position: relative;
 }
+
+#close {
+	position: absolute;
+	right: 0;
+	top: 0;
+	margin: 10px;
+	color: #2c3e50;
+	z-index: 100;
+}
+
+#close:hover {
+	color: #bdc3c7;
+	cursor: pointer;
+}
+
+#accommodationImage {
+	max-height: 100%;
+}
