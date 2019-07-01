@@ -283,7 +283,9 @@ function accommodationPopUp(accommodationID){
     var userBreakfast = document.getElementById('breakfast').value;
     var userLunch = document.getElementById('lunch').value;
     var userDinner = document.getElementById('dinner').value;
-    confirmPage(userBreakfast, userLunch, userDinner);
+    var chosenAccommodation = singleAccommodation;
+    // var accommodationCost = parseInt(chosenAccommodation.value * userNights);
+    confirmPage(userBreakfast, userLunch, userDinner, chosenAccommodation, accommodationCost);
   });
 
 }
@@ -294,19 +296,18 @@ document.getElementById('close').onclick = function(){
 
 };
 
-function confirmPage(userBreakfast, userLunch, userDinner){
+function confirmPage(userBreakfast, userLunch, userDinner, chosenAccommodation, accommodationCost){
   $('#mainPageContainer').html('');
   $('#accommodationPopUp').hide();
   calcBreakfast = (userBreakfast * 7);
   calcLunch = (userLunch * 9);
   calcDinner = (userDinner * 10);
-  console.log(calcBreakfast);
-  console.log(calcLunch);
-  console.log(calcDinner);
+  console.log(accommodationCost);
 
   var confirmHTML = document.getElementById('mainPageContainer');
   confirmHTML.innerHTML += '<div class="row"><div class="col"><h5 class="text-center display-4">Confirmation</h5></div></div>';
-  confirmHTML.innerHTML += '<div class="row"><div class="col"></div></div>';
+  confirmHTML.innerHTML += '<div class="row"><div class="col"><h4 class="text-center">Accommodation Chosen: ' + chosenAccommodation.title + '</h4></div></div>';
+  confirmHTML.innerHTML += '<div class="row"><div class="col"><h4></h4></div></div>';
   confirmHTML.innerHTML += '<div class="row"><div class="col"><button type="button" id="next" class="btn btn-info btn-lg mt-5 d-flex justify-content-center" onclick="emailPopUp();">Send Confirmation Email</button></div></div>';
 }
 
