@@ -253,12 +253,12 @@ function resultsPage(userNights, userDestination, userPeople, userDate){
   for (var b = 0; b < popUp.length; b++) {
     popUp[b].onclick = function(){
       var id = parseInt(this.dataset.id);
-				accommodationPopUp(id);
+				accommodationPopUp(id, userNights);
     }
   }
 }
 
-function accommodationPopUp(accommodationID){
+function accommodationPopUp(accommodationID, userNights){
   var singleAccommodation;
 	for (var y = 0; y < accommodationOptions.length; y++){
 		if(accommodationOptions[y].id === accommodationID){
@@ -284,8 +284,8 @@ function accommodationPopUp(accommodationID){
     var userLunch = document.getElementById('lunch').value;
     var userDinner = document.getElementById('dinner').value;
     var chosenAccommodation = singleAccommodation;
-    // console.log(singleAccommodation.cost);
-    confirmPage(userBreakfast, userLunch, userDinner, chosenAccommodation);
+    var accommodationCost = singleAccommodation.cost * userNights;
+    confirmPage(userBreakfast, userLunch, userDinner, chosenAccommodation, accommodationCost);
   });
 
 }
@@ -296,12 +296,14 @@ document.getElementById('close').onclick = function(){
 
 };
 
-function confirmPage(userBreakfast, userLunch, userDinner, chosenAccommodation){
+function confirmPage(userBreakfast, userLunch, userDinner, chosenAccommodation, accommodationCost){
   $('#mainPageContainer').html('');
   $('#accommodationPopUp').hide();
   calcBreakfast = (userBreakfast * 7);
   calcLunch = (userLunch * 9);
   calcDinner = (userDinner * 10);
+  var overallCost = (accommodationCost + calcBreakfast + calcLunch + calcDinner);
+  console.log(overallCost);
 
   var confirmHTML = document.getElementById('mainPageContainer');
   confirmHTML.innerHTML += '<div class="row"><div class="col"><h5 class="text-center display-4">Confirmation</h5></div></div>';
