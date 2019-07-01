@@ -203,15 +203,30 @@ function formPage(){
 function resultsPage(userNights, userDestination, userPeople, userDate){
   $('#mainPageContainer').html('');
    if (userPeople == 1) {
-    var accommodationHotels =  accommodationOptions.filter(function(hotel) {
-     	 return hotel.type == "Hotel";
-    });
-    var accommodationHouses = accommodationOptions.filter(function(house){
-      return house.type == "House";
-    });
-    var accommodationHostels = accommodationOptions.filter(function(hostel){
-      return hostel.type == "Hostel";
-    });
+     // if (userNights > 1 && userNights < 5){
+     //   var accommodationHotels =  accommodationOptions.filter(function(hotel) {
+     //    	 return hotel.type == "Hotel";
+     //   });
+     // }
+     // if (userNights > 2 && userNights < 15){
+     //   var accommodationHouses = accommodationOptions.filter(function(house){
+     //     return house.type == "House";
+     //   });
+     // }
+     // if (userNights > 1 && userNights < 10){
+     //   var accommodationHostels = accommodationOptions.filter(function(hostel){
+     //     return hostel.type == "Hostel";
+     //   });
+     // }
+     var accommodationHotels =  accommodationOptions.filter(function(hotel) {
+       return hotel.type == "Hotel";
+     });
+     var accommodationHouses = accommodationOptions.filter(function(house){
+       return house.type == "House";
+     });
+     var accommodationHostels = accommodationOptions.filter(function(hostel){
+       return hostel.type == "Hostel";
+     });
     var relevantAccommodation = accommodationHotels.concat(accommodationHouses, accommodationHostels);
   } else if(userPeople == 2) {
     var accommodationMotels = accommodationOptions.filter(function(motel){
