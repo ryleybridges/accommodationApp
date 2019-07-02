@@ -261,7 +261,7 @@ function resultsPage(userNights, userDestination, userPeople, userDate){
     popUp[b].onclick = function(){
       var id = parseInt(this.dataset.id);
 				accommodationPopUp(id, userNights, userPeople, userDate, userDestination);
-    }
+    };
   }
 }
 
@@ -306,9 +306,9 @@ document.getElementById('close').onclick = function(){
 function confirmPage(userBreakfast, userLunch, userDinner, chosenAccommodation, accommodationCost, userNights, userPeople, userDate, userDestination){
   $('#mainPageContainer').html('');
   $('#accommodationPopUp').hide();
-  calcBreakfast = (userBreakfast * 7);
-  calcLunch = (userLunch * 9);
-  calcDinner = (userDinner * 10);
+  var calcBreakfast = (userBreakfast * 7);
+  var calcLunch = (userLunch * 9);
+  var calcDinner = (userDinner * 10);
   var overallCost = (accommodationCost + calcBreakfast + calcLunch + calcDinner);
 
   var confirmHTML = document.getElementById('mainPageContainer');
@@ -329,9 +329,9 @@ function emailPopUp(){
     title: 'Input email address',
     input: 'email',
     inputPlaceholder: 'Enter your email address'
-  })
+  });
 
   if (email) {
-    Swal.fire('Entered email: ' + email)
+    Swal.fire('Entered email: ' + email);
   }
 }
