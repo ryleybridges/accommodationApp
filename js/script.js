@@ -8,6 +8,8 @@ var accommodationOptions = [
     lng: 174.783989,
     minNight: 1,
     maxNight: 10,
+    minPeople: 1,
+    maxPeople: 1,
     description: 'Located in the very center of Wellington, this award-winning hostel features 2 fully equipped kitchens and dining areas and a spacious guest lounge room with TV projection screen and free movie hire. 2GB of free WiFi is available each day for all guests.',
     image: 'yha-wellington-exterior-2-2010-1500.jpg'
   },
@@ -20,6 +22,8 @@ var accommodationOptions = [
     lng: 174.774631,
     minNight: 1,
     maxNight: 5,
+    minPeople: 1,
+    maxPeople: 4,
     description: 'Novotel Wellington is a 4.5 star hotel located in the heart of the CBD, close to iconic attractions - Te Papa, Cable Car, Botanical Gardens and the Waterfront. Our modern accommodation rooms have a pop of colour and are designed with guest comfort in mind.',
     image: 'novotel.jpg'
   },
@@ -32,6 +36,8 @@ var accommodationOptions = [
     lng: 174.776942,
     minNight: 1,
     maxNight: 5,
+    minPeople: 1,
+    maxPeople: 4,
     description: 'The 5-star InterContinental Wellington is located by the harbor waterfront, just 5 mi from Wellington International Airport. It offers an exclusive club lounge, a fitness center, 2 restaurants and a bar. The elegant guest rooms are spacious and well-furnished.',
     image: 'intercontinental-wellington.jpg'
   },
@@ -44,6 +50,8 @@ var accommodationOptions = [
     lng: 174.773975,
     minNight: 1,
     maxNight: 5,
+    minPeople: 1,
+    maxPeople: 4,
     description: 'Centrally located in Wellington, Boulcott Suites is a unique 5-star apartment hotel that has been designed and fully furnished with elegance and style. They feature studio apartments and spacious single-level suites to fully-equipped executive four bedroom townhouses.',
     image: 'boulcott.jpg'
   },
@@ -57,6 +65,8 @@ var accommodationOptions = [
     lng: 174.777058,
     minNight: 1,
     maxNight: 10,
+    minPeople: 1,
+    maxPeople: 1,
     description: 'Nomads Capital is a 5 star flashpacker hostel right in the heart of Wellington. Five minutes walk from the vibrant Cuba Street, bustling Courtenay Place, beautiful waterfront and award winning Te Papa Museum.',
     image: 'nomads.jpg'
   },
@@ -69,6 +79,8 @@ var accommodationOptions = [
     lng: 174.776705,
     minNight: 1,
     maxNight: 10,
+    minPeople: 1,
+    maxPeople: 1,
     description: 'Located in the heart of the city of Wellington,The Marion Hostel offers a range of backpacker accommodations and features a rooftop terrace. It is just a 1-minute walk from Cuba Street where you will find a variety of restaurants, cafes and bars.',
     image: 'marionhotel.jpg'
   },
@@ -81,6 +93,8 @@ var accommodationOptions = [
     lng: 174.757320,
     minNight: 2,
     maxNight: 15,
+    minPeople: 1,
+    maxPeople: 4,
     description: 'This unique holiday home is a Wellington landmark and was built by industrial designer Ross Stevens, and all three levels are homely and offer the modern comforts of a contemporary house with many more unique and quirky features conventional houses do not offer.',
     image: 'containerhouse.jpg'
   },
@@ -93,6 +107,8 @@ var accommodationOptions = [
     lng: 174.811649,
     minNight: 3,
     maxNight: 10,
+    minPeople: 2,
+    maxPeople: 4,
     description: 'Located 5 minutes walk or 2 minutes drive from Wellington Airport, Airport Motor Lodge offers fully soundproofed motel. Free onsite parking and a complimentary airport shuttle service are provided.',
     image: 'airportmotorlodge.jpg'
   },
@@ -105,6 +121,8 @@ var accommodationOptions = [
     lng: 174.802489,
     minNight: 2,
     maxNight: 15,
+    minPeople: 1,
+    maxPeople: 4,
     description: 'This is a beautiful and sunny waterfront 3-bed penthouse apartment with an enormous balcony/deck, expansive water views overlooking Wellington Harbour and situated equidistant between Wellington City and Wellington Airport.',
     image: 'penthouse.jpg'
   },
@@ -117,6 +135,8 @@ var accommodationOptions = [
     lng: 174.773548,
     minNight: 2,
     maxNight: 15,
+    minPeople: 1,
+    maxPeople: 4,
     description: 'Built in 1880, fully renovated in October 2010 and located in the heart of the citys vibrant Cuba Quarter. Hotel quality linen, commerically laundered, and the cottages are professionally cleaned after each stay.',
     image: 'citycottage.jpg'
   },
@@ -129,6 +149,8 @@ var accommodationOptions = [
     lng: 174.804165,
     minNight: 3,
     maxNight: 10,
+    minPeople: 2,
+    maxPeople: 4,
     description: 'Located within a 10-minute drive from Wellington CBD where you will find shopping, entertainment and other activities, Bella Vista Motel Wellington offers 4-star accommodations with free private parking. Wellington Airport is just a 9-minute drive from the property.',
     image: 'bellavista.jpg'
   },
@@ -141,6 +163,8 @@ var accommodationOptions = [
     lng: 174.778582,
     minNight: 3,
     maxNight: 10,
+    minPeople: 2,
+    maxPeople: 4,
     description: 'The Marksman is conveniently located in central Wellington within walking distance of local attractions, the CBD, Courtenay Place entertainment district, and close to the Interisland Ferry Terminal and Wellington City Airport.',
     image: 'marksman.jpg'
   }
@@ -226,55 +250,17 @@ function formPage(){
 
 function resultsPage(userNights, userDestination, userPeople, userDate){
   $('#mainPageContainer').html('');
-  if ((userNights > minNight) && (userNights < maxNight)){
-    
+  // var resultString = '<div class="row">';
+  var resultString = '';
+  for (var i = 0; i < accommodationOptions.length; i++) {
+    if((userNights >= accommodationOptions[i].minNight) && (userNights <= accommodationOptions[i].maxNight) && (userPeople >= accommodationOptions[i].minPeople) && (userPeople <= accommodationOptions[i].maxPeople)){
+    resultString += '<div class="col-sm-3 d-inline-block col-md-3 mb-3 mt-1 accommodationClick" data-id="'+ accommodationOptions[i].id+'"><div class="card" style="width:14rem;"><img src="images/cards/' + accommodationOptions[i].image + '" class="card-img-top" alt="' + accommodationOptions[i].title + '"><div class="card-body"><h6 class="card-title text-center">' + accommodationOptions[i].title + '</h6><p class="card-text text-center">Cost: $' + accommodationOptions[i].cost * userNights + '</p></div></div></div></div>';
   }
-   if (userPeople == 1) {
-     var accommodationHotels =  accommodationOptions.filter(function(hotel) {
-       return hotel.type == "Hotel";
-     });
-     var accommodationHouses = accommodationOptions.filter(function(house){
-       return house.type == "House";
-     });
-     var accommodationHostels = accommodationOptions.filter(function(hostel){
-       return hostel.type == "Hostel";
-     });
-    var relevantAccommodation = accommodationHotels.concat(accommodationHouses, accommodationHostels);
-  } else if(userPeople == 2) {
-    var accommodationMotels = accommodationOptions.filter(function(motel){
-      return motel.type == "Motel";
-    });
-    var accommodationHotels =  accommodationOptions.filter(function(hotel) {
-  	   return hotel.type == "Hotel";
-     });
-     var accommodationHouses = accommodationOptions.filter(function(house){
-       return house.type == "House";
-     });
-     var relevantAccommodation = accommodationMotels.concat(accommodationHotels, accommodationHouses);
-  } else if(userPeople == 3){
-    var accommodationMotels = accommodationOptions.filter(function(motel){
-      return motel.type == "Motel";
-    });
-    var accommodationHouses = accommodationOptions.filter(function(house){
-      return house.type == "House";
-    });
-    var relevantAccommodation = accommodationMotels.concat(accommodationHouses);
-  } else{
-    var accommodationMotels = accommodationOptions.filter(function(motel){
-      return motel.type == "Motel";
-    });
-    var accommodationHouses = accommodationOptions.filter(function(house){
-      return house.type == "House";
-    });
-    var relevantAccommodation = accommodationMotels.concat(accommodationHouses);
-  }
-
+  // resultString += '</div>';
   var resultsHTML = document.getElementById('mainPageContainer');
-  resultsHTML.innerHTML += '<div class="row">';
-  for (var i = 0; i < relevantAccommodation.length; i++) {
-    resultsHTML.innerHTML += '<div class="col-sm-3 d-inline-block col-md-3 mb-3 mt-1 accommodationClick" data-id="'+relevantAccommodation[i].id+'"><div class="card" style="width:14rem;"><img src="images/cards/' + relevantAccommodation[i].image + '" class="card-img-top" alt="' + relevantAccommodation[i].title + '"><div class="card-body"><h6 class="card-title text-center">' + relevantAccommodation[i].title + '</h6><p class="card-text text-center">Cost: $' + relevantAccommodation[i].cost * userNights + '</p></div></div></div>';
-  }
-  resultsHTML.innerHTML += '</div>';
+  resultsHTML.innerHTML = resultString;
+}
+
 
   var popUp = document.getElementsByClassName('accommodationClick');
   for (var b = 0; b < popUp.length; b++) {
