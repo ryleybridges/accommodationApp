@@ -226,6 +226,9 @@ function formPage(){
 
 function resultsPage(userNights, userDestination, userPeople, userDate){
   $('#mainPageContainer').html('');
+  if ((userNights > minNight) && (userNights < maxNight)){
+    
+  }
    if (userPeople == 1) {
      var accommodationHotels =  accommodationOptions.filter(function(hotel) {
        return hotel.type == "Hotel";
