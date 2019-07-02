@@ -6,6 +6,8 @@ var accommodationOptions = [
     cost: 30,
     lat: -41.293066,
     lng: 174.783989,
+    minNight: 1,
+    maxNight: 10,
     description: 'Located in the very center of Wellington, this award-winning hostel features 2 fully equipped kitchens and dining areas and a spacious guest lounge room with TV projection screen and free movie hire. 2GB of free WiFi is available each day for all guests.',
     image: 'yha-wellington-exterior-2-2010-1500.jpg'
   },
@@ -16,6 +18,8 @@ var accommodationOptions = [
     cost: 157,
     lat: -41.283823,
     lng: 174.774631,
+    minNight: 1,
+    maxNight: 5,
     description: 'Novotel Wellington is a 4.5 star hotel located in the heart of the CBD, close to iconic attractions - Te Papa, Cable Car, Botanical Gardens and the Waterfront. Our modern accommodation rooms have a pop of colour and are designed with guest comfort in mind.',
     image: 'novotel.jpg'
   },
@@ -26,6 +30,8 @@ var accommodationOptions = [
     cost: 157,
     lat: -41.284636,
     lng: 174.776942,
+    minNight: 1,
+    maxNight: 5,
     description: 'The 5-star InterContinental Wellington is located by the harbor waterfront, just 5 mi from Wellington International Airport. It offers an exclusive club lounge, a fitness center, 2 restaurants and a bar. The elegant guest rooms are spacious and well-furnished.',
     image: 'intercontinental-wellington.jpg'
   },
@@ -36,6 +42,8 @@ var accommodationOptions = [
     cost: 157,
     lat: -41.289109,
     lng: 174.773975,
+    minNight: 1,
+    maxNight: 5,
     description: 'Centrally located in Wellington, Boulcott Suites is a unique 5-star apartment hotel that has been designed and fully furnished with elegance and style. They feature studio apartments and spacious single-level suites to fully-equipped executive four bedroom townhouses.',
     image: 'boulcott.jpg'
   },
@@ -47,6 +55,8 @@ var accommodationOptions = [
     cost: 30,
     lat: -41.289576,
     lng: 174.777058,
+    minNight: 1,
+    maxNight: 10,
     description: 'Nomads Capital is a 5 star flashpacker hostel right in the heart of Wellington. Five minutes walk from the vibrant Cuba Street, bustling Courtenay Place, beautiful waterfront and award winning Te Papa Museum.',
     image: 'nomads.jpg'
   },
@@ -57,6 +67,8 @@ var accommodationOptions = [
     cost: 30,
     lat: -41.294208,
     lng: 174.776705,
+    minNight: 1,
+    maxNight: 10,
     description: 'Located in the heart of the city of Wellington,The Marion Hostel offers a range of backpacker accommodations and features a rooftop terrace. It is just a 1-minute walk from Cuba Street where you will find a variety of restaurants, cafes and bars.',
     image: 'marionhotel.jpg'
   },
@@ -67,6 +79,8 @@ var accommodationOptions = [
     cost: 240,
     lat: -41.334940,
     lng: 174.757320,
+    minNight: 2,
+    maxNight: 15,
     description: 'This unique holiday home is a Wellington landmark and was built by industrial designer Ross Stevens, and all three levels are homely and offer the modern comforts of a contemporary house with many more unique and quirky features conventional houses do not offer.',
     image: 'containerhouse.jpg'
   },
@@ -77,6 +91,8 @@ var accommodationOptions = [
     cost: 90,
     lat: -41.325270,
     lng: 174.811649,
+    minNight: 3,
+    maxNight: 10,
     description: 'Located 5 minutes walk or 2 minutes drive from Wellington Airport, Airport Motor Lodge offers fully soundproofed motel. Free onsite parking and a complimentary airport shuttle service are provided.',
     image: 'airportmotorlodge.jpg'
   },
@@ -87,6 +103,8 @@ var accommodationOptions = [
     cost: 240,
     lat: -41.304027,
     lng: 174.802489,
+    minNight: 2,
+    maxNight: 15,
     description: 'This is a beautiful and sunny waterfront 3-bed penthouse apartment with an enormous balcony/deck, expansive water views overlooking Wellington Harbour and situated equidistant between Wellington City and Wellington Airport.',
     image: 'penthouse.jpg'
   },
@@ -97,6 +115,8 @@ var accommodationOptions = [
     cost: 240,
     lat: -41.296782,
     lng: 174.773548,
+    minNight: 2,
+    maxNight: 15,
     description: 'Built in 1880, fully renovated in October 2010 and located in the heart of the citys vibrant Cuba Quarter. Hotel quality linen, commerically laundered, and the cottages are professionally cleaned after each stay.',
     image: 'citycottage.jpg'
   },
@@ -107,6 +127,8 @@ var accommodationOptions = [
     cost: 90,
     lat: -41.301914,
     lng: 174.804165,
+    minNight: 3,
+    maxNight: 10,
     description: 'Located within a 10-minute drive from Wellington CBD where you will find shopping, entertainment and other activities, Bella Vista Motel Wellington offers 4-star accommodations with free private parking. Wellington Airport is just a 9-minute drive from the property.',
     image: 'bellavista.jpg'
   },
@@ -117,6 +139,8 @@ var accommodationOptions = [
     cost: 90,
     lat: -41.300372,
     lng: 174.778582,
+    minNight: 3,
+    maxNight: 10,
     description: 'The Marksman is conveniently located in central Wellington within walking distance of local attractions, the CBD, Courtenay Place entertainment district, and close to the Interisland Ferry Terminal and Wellington City Airport.',
     image: 'marksman.jpg'
   }
@@ -203,21 +227,6 @@ function formPage(){
 function resultsPage(userNights, userDestination, userPeople, userDate){
   $('#mainPageContainer').html('');
    if (userPeople == 1) {
-     // if (userNights > 1 && userNights < 5){
-     //   var accommodationHotels =  accommodationOptions.filter(function(hotel) {
-     //    	 return hotel.type == "Hotel";
-     //   });
-     // }
-     // if (userNights > 2 && userNights < 15){
-     //   var accommodationHouses = accommodationOptions.filter(function(house){
-     //     return house.type == "House";
-     //   });
-     // }
-     // if (userNights > 1 && userNights < 10){
-     //   var accommodationHostels = accommodationOptions.filter(function(hostel){
-     //     return hostel.type == "Hostel";
-     //   });
-     // }
      var accommodationHotels =  accommodationOptions.filter(function(hotel) {
        return hotel.type == "Hotel";
      });
