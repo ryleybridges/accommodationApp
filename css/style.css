@@ -95,3 +95,15 @@ h6 {
 .exampleFormControlSelect1 {
   width: 50%;
 }
+
+@media screen and (max-width: 990px) {
+  body {
+    overflow: scroll;
+  }
+
+  .card {
+    overflow: scroll;
+    height: 100%;
+    font-size: 
+  }
+}
