@@ -236,14 +236,16 @@ function resultsPage(userNights, userDestination, userPeople, userDate){
   $('#mainPageContainer').html('');
   var resultString = '';
   resultString += '<div class="row">';
-  for (var i = 0; i < accommodationOptions.length; i++) {
-    if((userNights >= accommodationOptions[i].minNight) && (userNights <= accommodationOptions[i].maxNight) && (userPeople >= accommodationOptions[i].minPeople) && (userPeople <= accommodationOptions[i].maxPeople)){
-    resultString += '<div class="d-inline-block mb-3 mt-1 ml-2 accommodationClick" data-id="'+ accommodationOptions[i].id+'"><div class="card"><img src="images/cards/' + accommodationOptions[i].image + '" class="card-img-top" alt="' + accommodationOptions[i].title + '"><div class="card-body"><h6 class="card-title text-center">' + accommodationOptions[i].title + '</h6><p class="card-text text-center">Cost: $' + accommodationOptions[i].cost * userNights + '</p></div></div></div></div>';
-  }
-  resultString+= '</div>';
-  var resultsHTML = document.getElementById('mainPageContainer');
-  resultsHTML.innerHTML = resultString;
-}
+    for (var i = 0; i < accommodationOptions.length; i++) {
+
+        if((userNights >= accommodationOptions[i].minNight) && (userNights <= accommodationOptions[i].maxNight) && (userPeople >= accommodationOptions[i].minPeople) && (userPeople <= accommodationOptions[i].maxPeople)){
+            resultString += '<div class="col col-12 col-md-6 d-inline-block mb-3 mt-1 ml-2 accommodationClick float-left" data-id="'+ accommodationOptions[i].id+'"><div class="card"><img src="images/cards/' + accommodationOptions[i].image + '" class="card-img-top" alt="' + accommodationOptions[i].title + '"><div class="card-body"><h6 class="card-title text-center">' + accommodationOptions[i].title + '</h6><p class="card-text text-center">Cost: $' + accommodationOptions[i].cost * userNights + '</p></div></div></div></div>';
+        }
+
+    }
+    resultString += '</div>';
+    var resultsHTML = document.getElementById('mainPageContainer');
+    resultsHTML.innerHTML = resultString;
 
 
   var popUp = document.getElementsByClassName('accommodationClick');
