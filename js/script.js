@@ -174,21 +174,9 @@ $('#accommodationPopUp').hide();
 
 function startingPage(){
   var startHTML = document.getElementById('mainPageContainer');
-  startHTML.innerHTML += '<div class="row">';
-  startHTML.innerHTML += '<div class="col d-flex justify-content-center mt-5"><img src="images/tourismlogo.png" alt="Tourism New Zealand logo"></div>';
-  startHTML.innerHTML += '</div>';
-  startHTML.innerHTML += '<div class="row">';
-  startHTML.innerHTML += '<div class="col">';
-  startHTML.innerHTML += '<h1 class="mt-3 text-center display-4">BookIt Accommodation</h1>';
-  startHTML.innerHTML += '</div>';
-  startHTML.innerHTML += '</div>';
-  startHTML.innerHTML += '<div class="row">';
-  startHTML.innerHTML += '<div class="col">';
-  startHTML.innerHTML += '</div>';
-  startHTML.innerHTML += '<div class="col">';
-  startHTML.innerHTML += '<button type="button" class="mt-3 btn btn-info btn-lg d-flex justify-content-center btn-begin" onclick="formPage();">START</button>';
-  startHTML.innerHTML += '</div>';
-  startHTML.innerHTML += '</div>';
+  startHTML.innerHTML += '<div class="row"><div class="col d-flex justify-content-center mt-5"><img src="images/tourismlogo.png" alt="Tourism New Zealand logo"></div></div>';
+  startHTML.innerHTML += '<div class="row"><div class="col"><h1 class="mt-3 text-center">BookIt Accommodation</h1></div></div>';
+  startHTML.innerHTML += '<div class="row"><div class="col"><button type="button" class="mt-3 btn btn-info btn-lg d-flex justify-content-center btn-begin h-100" onclick="formPage();">START</button></div></div>';
 }
 
 startingPage();
@@ -199,8 +187,8 @@ function formPage(){
       $('#datepicker').datepicker();
   });
   var formHTML = document.getElementById('mainPageContainer');
-  formHTML.innerHTML += '<div class="row"> <div class="col"><h4 class="text-center mt-6">Where are you going?</h4><input type="text" id="destination" class="form-control" value="Wellington"></div> <div class="col"><h4 class="text-center mt-6">When are you going there?<input type="text" class="form-control" id="datepicker"></div> </div>';
-  formHTML.innerHTML += '<div class="row"><div class="col"><h4 class="text-center mt-5">How many people are going?</h4><input type="number" class="form-control" id="people" min="1" max="4"></div><div class="col"><h4 class="text-center mt-5">How many nights?</h4><input type="number" class="form-control" id="nights" min="1" max="15"></div></div>';
+  formHTML.innerHTML += '<div class="row"> <div class="col col-12 col-md-6"><h4 class="text-center mt-5">Where are you going?</h4><input type="text" id="destination" class="form-control" value="Wellington"></div> <div class="col col-12 col-md-6"><h4 class="text-center mt-5">When are you going there?<input type="text" class="form-control" id="datepicker"></div> </div>';
+  formHTML.innerHTML += '<div class="row"><div class="col col-12 col-md-6"><h4 class="text-center mt-5">How many people are going?</h4><input type="number" class="form-control" id="people" min="1" max="4"></div><div class="col col-12 col-md-6"><h4 class="text-center mt-5">How many nights?</h4><input type="number" class="form-control" id="nights" min="1" max="15"></div></div>';
   formHTML.innerHTML += '<div class="row"><div class="col"><button type="button" id="next" class="btn btn-info btn-lg mt-5 d-flex justify-content-center">Next</button></div></div>';
 
   $('#next').click(function(){
@@ -247,10 +235,12 @@ function formPage(){
 function resultsPage(userNights, userDestination, userPeople, userDate){
   $('#mainPageContainer').html('');
   var resultString = '';
+  resultString += '<div class="row">';
   for (var i = 0; i < accommodationOptions.length; i++) {
     if((userNights >= accommodationOptions[i].minNight) && (userNights <= accommodationOptions[i].maxNight) && (userPeople >= accommodationOptions[i].minPeople) && (userPeople <= accommodationOptions[i].maxPeople)){
-    resultString += '<div class="d-inline-block mb-3 mt-1 ml-2 accommodationClick" data-id="'+ accommodationOptions[i].id+'"><div class="card" style="width:14rem;"><img src="images/cards/' + accommodationOptions[i].image + '" class="card-img-top" alt="' + accommodationOptions[i].title + '"><div class="card-body"><h6 class="card-title text-center">' + accommodationOptions[i].title + '</h6><p class="card-text text-center">Cost: $' + accommodationOptions[i].cost * userNights + '</p></div></div></div></div>';
+    resultString += '<div class="d-inline-block mb-3 mt-1 ml-2 accommodationClick" data-id="'+ accommodationOptions[i].id+'"><div class="card"><img src="images/cards/' + accommodationOptions[i].image + '" class="card-img-top" alt="' + accommodationOptions[i].title + '"><div class="card-body"><h6 class="card-title text-center">' + accommodationOptions[i].title + '</h6><p class="card-text text-center">Cost: $' + accommodationOptions[i].cost * userNights + '</p></div></div></div></div>';
   }
+  resultString+= '</div>';
   var resultsHTML = document.getElementById('mainPageContainer');
   resultsHTML.innerHTML = resultString;
 }
